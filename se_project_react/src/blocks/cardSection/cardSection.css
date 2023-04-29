@@ -1,0 +1,19 @@
+.card-section {
+}
+
+.card-section__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card-section__image {
+  width: 328px;
+  height: 328px;
+  border-radius: 10px;
+}
+
+.card-section__name {
+  text-align: center;
+}

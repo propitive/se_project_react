@@ -1,0 +1,17 @@
+.weather {
+  position: relative;
+}
+
+.weather-info {
+  position: absolute;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 36px;
+  line-height: 40px;
+  top: 20px;
+  left: 16px;
+  color: white;
+}
+
+.weather-image {
+  width: 100%;
+}
