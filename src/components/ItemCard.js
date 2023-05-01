@@ -4,6 +4,7 @@ function ItemCard({ x, onSelectCard }) {
       <div className="card-section__container">
         <img
           src={x.link}
+          alt="item card"
           className="card-section__image"
           onClick={() => onSelectCard(x)}
         />

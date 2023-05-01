@@ -17,7 +17,7 @@ import {
   getForecastWeather,
   parseWeatherData,
   parseWeatherLocation,
-} from "./util/WeatherApi";
+} from "./utils/WeatherApi";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
