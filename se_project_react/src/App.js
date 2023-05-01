@@ -31,11 +31,13 @@ function App() {
   const handleCloseModal = () => {
     setActiveModal("");
     document.removeEventListener("keyup", handleEscUp);
+    document.removeEventListener("click", overlayClick);
   };
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
     document.addEventListener("keyup", handleEscUp);
+    document.addEventListener("click", overlayClick);
   };
 
   useEffect(() => {
@@ -54,6 +56,30 @@ function App() {
       setActiveModal("");
     }
   };
+
+  const overlayClick = (e) => {
+    window.onclick = function (e) {
+      console.log(e.target);
+      if (
+        e.target.classList.contains("modal") ||
+        e.target.classList.contains("close-icon")
+      ) {
+        setActiveModal("");
+        console.log("get out!");
+      } else {
+      }
+    };
+  };
+
+  // const handleOverlayClick = (e) => {
+  //   if (setActiveModal("preview") || setSelectedCard(card)) {
+
+  //   }
+  // }
+
+  // window.onclick = function (e) {
+  //   console.log(e.target);
+  // };
 
   return (
     <>
@@ -131,7 +157,7 @@ function App() {
             <ItemModal
               selectedCard={selectedCard}
               onClose={handleCloseModal}
-              // closeModal={setActiveModal("")}
+              // isActive={}
             />
           )}
         </div>

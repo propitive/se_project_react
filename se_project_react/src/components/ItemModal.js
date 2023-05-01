@@ -1,17 +1,6 @@
 import closeButton from "../images/close-button.svg";
 
 function ItemModal({ selectedCard, onClose }) {
-  // selectedCard.addEventListener("mousedown", (evt) => {
-  //   if (
-  //     evt.target.classList.contains("modal") ||
-  //     evt.target.classList.contains("close-icon")
-  //   ) {
-  //     {
-  //       closeModal;
-  //     }
-  //   }
-  // });
-
   return (
     <div className={`modal`}>
       <div className="modal__content item-modal__content">
