@@ -1,13 +1,5 @@
 import { useEffect, useState } from "react";
-import "./blocks/header/header.css";
-import "./blocks/page/page.css";
-import "./blocks/cardSection/cardSection.css";
-import "./blocks/weatherCard/weatherCard.css";
-import "./blocks/footer/footer.css";
-import "./blocks/modalWithForm/modalWithForm.css";
-import "./blocks/itemModal/itemModal.css";
-import "./blocks/newGarmentModal/newGarmentModal.css";
-import "./App.css";
+import "./index.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";

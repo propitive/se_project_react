@@ -1,0 +1,9 @@
+@import url(./blocks/app/app.css);
+@import url(./blocks/cardSection/cardSection.css);
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/header/header.css);
+@import url(./blocks/itemModal/itemModal.css);
+@import url(./blocks/modalWithForm/modalWithForm.css);
+@import url(./blocks/newGarmentModal/newGarmentModal.css);
+@import url(./blocks/page/page.css);
+@import url(./blocks/weatherCard/weatherCard.css);
