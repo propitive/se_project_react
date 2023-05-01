@@ -142,11 +142,7 @@ function App() {
             </ModalWithForm>
           )}
           {activeModal === "preview" && (
-            <ItemModal
-              selectedCard={selectedCard}
-              onClose={handleCloseModal}
-              // isActive={}
-            />
+            <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
           )}
         </div>
       </div>
