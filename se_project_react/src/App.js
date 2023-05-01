@@ -59,27 +59,15 @@ function App() {
 
   const overlayClick = (e) => {
     window.onclick = function (e) {
-      console.log(e.target);
       if (
         e.target.classList.contains("modal") ||
         e.target.classList.contains("close-icon")
       ) {
-        setActiveModal("");
-        console.log("get out!");
+        handleCloseModal();
       } else {
       }
     };
   };
-
-  // const handleOverlayClick = (e) => {
-  //   if (setActiveModal("preview") || setSelectedCard(card)) {
-
-  //   }
-  // }
-
-  // window.onclick = function (e) {
-  //   console.log(e.target);
-  // };
 
   return (
     <>

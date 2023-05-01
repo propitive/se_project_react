@@ -13,12 +13,10 @@ function ModalWithForm({
       <div className="modal__content">
         <img
           className="modal-form__close-icon"
+          alt="close-icon"
           src={closeButtonForms}
           onClick={onClose}
         />
-        {/* <button type="button" onClick={onClose}>
-          Close
-        </button> */}
         <h3 className="modal-form__title">{title}</h3>
         <form>{children}</form>
         <button type="submit" className="modal-form__button">
