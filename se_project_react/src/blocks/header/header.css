@@ -6,11 +6,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap");
 
 .header {
-  background-color: aqua;
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 60px;
+  margin-bottom: 18px;
+  margin-top: 18px;
 }
 
 .header__first-section {

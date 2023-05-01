@@ -1,0 +1,38 @@
+.new-garment-modal__title-name {
+  margin: 24px 0 8px;
+}
+
+.new-garment-modal__title-image {
+  margin: 0 0 8px;
+}
+
+.new-garment-modal__input {
+  border-style: none none solid none;
+  border-bottom-width: 1px;
+  margin-bottom: 24px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  width: 100%;
+}
+
+.new-garment-modal__text {
+  margin: 0 0 12px;
+}
+
+.new-garment-modal__button {
+  margin: 0 0 8px;
+  color: rgb(0, 0, 0, 0.5);
+}
+
+.new-garment-modal__button:last-child {
+  margin-bottom: 32px;
+}
+
+.new-garment-modal__radio {
+  accent-color: black;
+}
+
+.new-garment-modal__radio:checked ~ label {
+  color: black;
+}

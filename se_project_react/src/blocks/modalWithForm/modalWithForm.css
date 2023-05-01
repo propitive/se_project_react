@@ -15,5 +15,40 @@
   max-width: 496px;
   width: 100%;
   border-radius: 20px;
-  padding: 34px 32px;
+  padding: 28px 28px 36px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  position: relative;
+}
+
+.modal-form__close-icon {
+  position: absolute;
+  top: 23px;
+  right: 31px;
+}
+
+.modal-form__title {
+  margin: 0;
+}
+
+.modal-form__children {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form__button {
+  width: 124px;
+  height: 36px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  padding: 0;
+  border-radius: 10%;
+  color: white;
+  background-color: black;
+}
+.modal-form__button:hover {
+  background-color: rgb(0, 0, 0, 0.6);
 }
