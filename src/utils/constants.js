@@ -36,3 +36,37 @@ export const defaultClothingItems = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4",
   },
 ];
+
+export const weatherOptions = [
+  {
+    url: require("../images/weatherConditions/day/sunny.svg").default,
+    day: true,
+    type: "sunny",
+  },
+  {
+    url: require("../images/weatherConditions/day/cloudy.svg").default,
+    day: true,
+    type: "cloudy",
+  },
+  {
+    url: require("../images/weatherConditions/night/sunny.svg").default,
+    day: false,
+    type: "sunny",
+  },
+  {
+    url: require("../images/weatherConditions/night/cloudy.svg").default,
+    day: false,
+    type: "cloudy",
+  },
+];
+
+export const processServerResponse = (res) => {
+  if (res.ok) {
+    return res.json();
+  }
+  return Promise.reject(`Error: ${res.status}`);
+};
+
+export const latitude = 32.77;
+export const longitude = -96.79;
+export const APIkey = `44d763e20353ebef92d497833d045a80`;

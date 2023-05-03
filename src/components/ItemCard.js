@@ -1,15 +1,15 @@
-function ItemCard({ x, onSelectCard }) {
+function ItemCard({ card, onSelectCard }) {
   return (
     <div>
       <div className="card-section__container">
         <img
-          src={x.link}
+          src={card.link}
           alt="item card"
           className="card-section__image"
-          onClick={() => onSelectCard(x)}
+          onClick={() => onSelectCard(card)}
         />
         <div className="card-section__name">
-          <span>{x.name}</span>
+          <span className="card-section__span">{card.name}</span>
         </div>
       </div>
     </div>

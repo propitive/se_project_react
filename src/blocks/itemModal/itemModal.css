@@ -9,6 +9,10 @@
   top: 27px;
 }
 
+.item-modal__close-icon:hover {
+  cursor: pointer;
+}
+
 .item-modal__image {
   width: 100%;
 }

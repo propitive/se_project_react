@@ -20,6 +20,7 @@
   height: 328px;
   border-radius: 10px;
   margin-top: 34px;
+  cursor: pointer;
 }
 
 .card-section__name {
@@ -28,9 +29,10 @@
   top: 52px;
   left: 0;
   right: 0;
+  cursor: pointer;
 }
 
-.card-section__name span {
+.card-section__span {
   background-color: white;
   padding: 2px 12px;
 }

@@ -25,6 +25,10 @@
   color: rgb(0, 0, 0, 0.5);
 }
 
+.new-garment-modal__button:hover {
+  cursor: pointer;
+}
+
 .new-garment-modal__button:last-child {
   margin-bottom: 32px;
 }

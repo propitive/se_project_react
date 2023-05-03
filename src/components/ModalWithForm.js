@@ -1,13 +1,7 @@
 import "../blocks/modalWithForm/modalWithForm.css";
 import closeButtonForms from "../images/close-icon-forms.png";
 
-function ModalWithForm({
-  children,
-  buttonText = "Add garment",
-  title,
-  onClose,
-  name,
-}) {
+function ModalWithForm({ children, buttonText, title, onClose, name }) {
   return (
     <div className={`modal modal_type_${name}`}>
       <div className="modal__content">

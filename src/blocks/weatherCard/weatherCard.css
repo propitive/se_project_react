@@ -3,7 +3,7 @@
   margin-bottom: 40px;
 }
 
-.weather-info {
+.weather__info {
   position: absolute;
   font-family: "Space Grotesk", sans-serif;
   font-size: 36px;
@@ -13,6 +13,6 @@
   color: white;
 }
 
-.weather-image {
+.weather__image {
   width: 100%;
 }

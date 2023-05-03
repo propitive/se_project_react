@@ -1,6 +1,6 @@
 import closeButton from "../images/close-button.svg";
 
-function ItemModal({ selectedCard, onClose }) {
+function Card({ selectedCard, onClose }) {
   return (
     <div className={`modal`}>
       <div className="modal__content item-modal__content">
@@ -10,7 +10,11 @@ function ItemModal({ selectedCard, onClose }) {
           src={closeButton}
           onClick={onClose}
         />
-        <img src={selectedCard.link} className="item-modal__image" alt="item" />
+        <img
+          src={selectedCard.link}
+          className="item-modal__image"
+          alt={`Photo of ${selectedCard.name}`}
+        />
         <div className="item-modal__type">{selectedCard.name}</div>
         <div className="item-modal__weather">
           Weather type: {selectedCard.weather}
@@ -20,4 +24,4 @@ function ItemModal({ selectedCard, onClose }) {
   );
 }
 
-export default ItemModal;
+export default Card;

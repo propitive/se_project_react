@@ -47,6 +47,10 @@
   padding: 0;
 }
 
+.header__button:hover {
+  cursor: pointer;
+}
+
 .header__name {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
