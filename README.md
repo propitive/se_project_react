@@ -15,3 +15,9 @@ An API from [weathermap.org](weathermap.org) was used for the application to get
 The application offers a user-friendly, aesthetically-pleasing user interface that makes it easy for anyone to "pick up" my app and maneuver their way throughout the application,
 
 ![ScreenshotOfWholeScreen](/src/images/WTWR-fullScreen.png)
+
+When the user clicks on the item card, a modal appears which highlights the card that was clicked through enlarging the respective card and centering the respective card on the middle of the page.
+
+![ScreenshotOfItemModal](/src/images/WTWR-itemModalOpen.png)
+
+When the user click on the text that says "+ New Clothes," the user is prompted to fill out a modal which lists and specifies all the required information to create a new garment card.
