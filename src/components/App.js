@@ -4,13 +4,13 @@ import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
 import ModalWithForm from "./ModalWithForm";
-import Card from "./ItemModal";
+import ItemModal from "./ItemModal";
 import {
   getForecastWeather,
   parseWeatherData,
   parseWeatherLocation,
 } from "../utils/weatherApi";
-import { processServerResponse } from "../utils/constants";
+import { processServerResponse } from "../utils/weatherApi";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -47,7 +47,10 @@ function App() {
         const location = parseWeatherLocation(data);
         setCity(location);
       })
-      .then(processServerResponse);
+      .then(processServerResponse)
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   const handleEscUp = (evt) => {
@@ -62,7 +65,6 @@ function App() {
       e.target.classList.contains("close-icon")
     ) {
       handleCloseModal();
-    } else {
     }
   };
 
@@ -138,7 +140,7 @@ function App() {
           </ModalWithForm>
         )}
         {activeModal === "preview" && (
-          <Card selectedCard={selectedCard} onClose={handleCloseModal} />
+          <ItemModal card={selectedCard} onClose={handleCloseModal} />
         )}
       </div>
     </div>

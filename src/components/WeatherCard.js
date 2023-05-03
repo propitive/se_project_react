@@ -5,17 +5,19 @@ function WeatherCard({ day, type, weatherTemp = "" }) {
     return weatherOption.day === day && weatherOption.type === type;
   };
 
-  const imageSrc = weatherOptions.find(findWeather);
-  console.log(imageSrc);
+  const weatherOption = weatherOptions.find(findWeather);
 
-  const imageSrcUrl = imageSrc.url || "";
-  console.log(imageSrcUrl);
+  const weatherOptionSrcUrl = weatherOption.url || "";
 
   return (
     <>
       <section className="weather" id="header">
         <div className="weather__info">{weatherTemp}°F</div>
-        <img src={imageSrcUrl} alt="weather-app" className="weather__image" />
+        <img
+          src={weatherOptionSrcUrl}
+          alt="weather-app"
+          className="weather__image"
+        />
       </section>
     </>
   );

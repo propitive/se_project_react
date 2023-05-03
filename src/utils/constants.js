@@ -60,13 +60,6 @@ export const weatherOptions = [
   },
 ];
 
-export const processServerResponse = (res) => {
-  if (res.ok) {
-    return res.json();
-  }
-  return Promise.reject(`Error: ${res.status}`);
-};
-
 export const latitude = 32.77;
 export const longitude = -96.79;
 export const APIkey = `44d763e20353ebef92d497833d045a80`;
