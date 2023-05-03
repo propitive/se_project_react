@@ -5,7 +5,7 @@ function ItemModal({ card, onClose }) {
     <div className={`modal`}>
       <div className="modal__content item-modal__content">
         <img
-          class="item-modal__close-icon close-icon"
+          className="item-modal__close-icon close-icon"
           alt="close-icon"
           src={closeButton}
           onClick={onClose}

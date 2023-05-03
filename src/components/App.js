@@ -47,7 +47,6 @@ function App() {
         const location = parseWeatherLocation(data);
         setCity(location);
       })
-      .then(processServerResponse)
       .catch((err) => {
         console.log(err);
       });
