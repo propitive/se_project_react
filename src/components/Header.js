@@ -1,5 +1,6 @@
 import logoPath from "../images/logo.svg";
 import avatarPath from "../images/avatar.svg";
+import Checkbox from "./Checkbox";
 
 function Header({ onCreateModal, location }) {
   const currentDate = new Date().toLocaleString("default", {
@@ -16,6 +17,15 @@ function Header({ onCreateModal, location }) {
         </h2>
       </div>
       <div className="header__second-section">
+        {/* <label className="header__switch">
+          <input className="header__toggle" type="checkbox" />
+          <span className="header__slider"></span>
+          <div className="header__toggle_text_section">
+            <p className="header__toggle_text_f">F</p>
+            <p className="header__toggle_text_c">C</p>
+          </div>
+        </label> */}
+        <Checkbox />
         <button
           type="button"
           className="header__button"

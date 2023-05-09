@@ -38,12 +38,123 @@
   align-items: center;
 }
 
+.header__switch {
+  position: relative;
+  display: flex;
+  width: 56px;
+  height: 28px;
+  margin: 0 10px;
+}
+
+.header__switch:hover {
+  color: black;
+}
+
+.header__toggle {
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+}
+
+.header__slider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: 3px solid #7e7e7e;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.header__slider::before {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  content: "";
+  height: 28px;
+  width: 28px;
+  background-color: black;
+  transition: color 0.4s ease-in-out 0;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+/* .header__toggle:checked + .header__slider {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+} */
+
+/* .header__toggle:not(:checked) + .header__slider {
+  border: 3px solid #7e7e7e;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+} */
+
+.header__toggle:checked + .header__slider::before {
+  transform: translateX(28px);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+}
+
+.header__slider:hover {
+  border: 3px solid black;
+  color: black;
+}
+
+/* .header__toggle:hover {
+  border: 3px solid black;
+} */
+
+.header__toggle_text_section {
+  display: flex;
+  flex-direction: row;
+  z-index: 100;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.header__toggle_text_f {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  position: absolute;
+  color: #7e7e7e;
+  left: 19px;
+  font-size: 14px;
+  bottom: 5px;
+  mix-blend-mode: difference;
+}
+
+.header__toggle_text_c {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #7e7e7e;
+  position: absolute;
+  bottom: 5px;
+  right: 1px;
+  mix-blend-mode: difference;
+}
+
+.header__toggle_text__active {
+  color: white;
+}
+
 .header__button {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
   font-size: 20px;
   border: none;
-  background-color: transparent;
+  background-color: white;
   padding: 0;
 }
 

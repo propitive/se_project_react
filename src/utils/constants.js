@@ -63,3 +63,7 @@ export const weatherOptions = [
 export const latitude = 32.77;
 export const longitude = -96.79;
 export const APIkey = `44d763e20353ebef92d497833d045a80`;
+
+export const toggleButton = document.querySelector("header__toggle");
+export const fText = document.querySelector("header__toggle_text_f");
+export const cText = document.querySelector("header__toggle_text_c");
