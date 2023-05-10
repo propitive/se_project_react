@@ -1,11 +1,11 @@
-import SideBar from "./SideBar";
+import SideBar from "../components/SideBar";
 import ClothesSection from "./ClothesSection";
 
-export function Profile() {
+export function Profile({ onSelectCard }) {
   return (
     <section className="profile">
       <SideBar />
-      <ClothesSection />
+      <ClothesSection onSelectCard={onSelectCard} />
     </section>
   );
 }

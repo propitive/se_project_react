@@ -104,7 +104,7 @@ function App() {
             }
             onSelectCard={handleSelectedCard}
           /> */}
-          <Profile />
+          <Profile onSelectCard={handleSelectedCard} />
           <Footer />
           {activeModal === "create" && (
             <ModalWithForm

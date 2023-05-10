@@ -33,7 +33,7 @@ function Header({ onCreateModal, location }) {
         >
           + New Clothes
         </button>
-        <div className="header__name">Name</div>
+        <div className="header__name">Terrence Tegegne</div>
         <img src={avatarPath} alt="logo" className="header__avatar" />
       </div>
     </header>

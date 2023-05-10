@@ -10,7 +10,6 @@
   justify-content: space-between;
   align-items: center;
   min-height: 60px;
-  margin-bottom: 18px;
   margin-top: 18px;
 }
 
@@ -126,7 +125,7 @@
   font-weight: 700;
   font-size: 14px;
   position: absolute;
-  color: #7e7e7e;
+  color: rgb(0, 0, 0, 0.5);
   left: 19px;
   font-size: 14px;
   bottom: 5px;
@@ -138,7 +137,7 @@
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
   font-size: 14px;
-  color: #7e7e7e;
+  color: rgb(0, 0, 0, 0.5);
   position: absolute;
   bottom: 5px;
   right: 1px;
