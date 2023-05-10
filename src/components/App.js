@@ -5,6 +5,7 @@ import Main from "./Main";
 import Footer from "./Footer";
 import ModalWithForm from "./ModalWithForm";
 import ItemModal from "./ItemModal";
+import Profile from "./Profile";
 import {
   getForecastWeather,
   parseWeatherData,
@@ -95,14 +96,15 @@ function App() {
           value={{ currentTemperatureUnit, handleToggleSwitchChange }}
         >
           <Header onCreateModal={handleCreateModal} location={city} />
-          <Main
+          {/* <Main
             weatherTemp={
               currentTemperatureUnit === "F"
                 ? temp.temperature.F
                 : temp.temperature.C
             }
             onSelectCard={handleSelectedCard}
-          />
+          /> */}
+          <Profile />
           <Footer />
           {activeModal === "create" && (
             <ModalWithForm

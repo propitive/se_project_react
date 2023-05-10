@@ -6,7 +6,6 @@ export function Checkbox() {
   const currentTemperatureUnit = React.useContext(
     CurrentTemperatureUnitContext
   );
-  console.log(currentTemperatureUnit);
 
   const [checked, setChecked] = useState(false);
 
@@ -14,8 +13,6 @@ export function Checkbox() {
     setChecked(!checked);
     currentTemperatureUnit.handleToggleSwitchChange();
   };
-
-  console.log(currentTemperatureUnit);
 
   return (
     <label className="header__switch">

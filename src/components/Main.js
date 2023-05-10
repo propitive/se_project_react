@@ -8,12 +8,10 @@ function Main({ weatherTemp, onSelectCard }) {
   const currentTemperatureUnit = React.useContext(
     CurrentTemperatureUnitContext
   );
-  console.log(currentTemperatureUnit);
 
   const weatherTempString = weatherTemp.toString();
   const weatherTempStringArray = weatherTempString.split("°", 2);
   const weatherTempStringNumber = +weatherTempStringArray[0];
-  console.log(weatherTempStringNumber);
 
   const getWeatherTypeFarenheit = () => {
     if (weatherTempStringNumber >= 86) {
@@ -36,39 +34,19 @@ function Main({ weatherTemp, onSelectCard }) {
   };
 
   const getWeatherType = () => {
-    if (currentTemperatureUnit === "F") {
-      return getWeatherTypeFarenheit;
+    if (currentTemperatureUnit.currentTemperatureUnit === "F") {
+      return getWeatherTypeFarenheit();
     }
-    if (currentTemperatureUnit === "C") {
-      return getWeatherTypeCelsius;
+    if (currentTemperatureUnit.currentTemperatureUnit === "C") {
+      return getWeatherTypeCelsius();
     }
   };
 
-  const weatherType = function () {
-    return getWeatherType();
-  };
-  console.log(weatherType);
+  const weatherType = getWeatherType();
 
   const filteredCards = defaultClothingItems.filter((item) => {
-    // return item.weather.toLowerCase() === weatherType;
-    return (
-      item.weather.toLowerCase() ===
-      (currentTemperatureUnit === "F"
-        ? getWeatherTypeFarenheit()
-        : getWeatherTypeCelsius())
-    );
+    return item.weather.toLowerCase() === weatherType;
   });
-
-  // useEffect(() => {
-  //   const weatherType = getWeatherType();
-  //   const filteredCards = defaultClothingItems.filter((item) => {
-  //     return item.weather.toLowerCase() === weatherType;
-  //   });
-
-  //   return () => {
-  //     filteredCards;
-  //   };
-  // });
 
   return (
     <section className="main">
