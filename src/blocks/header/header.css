@@ -161,6 +161,11 @@
   cursor: pointer;
 }
 
+.header__profile-link {
+  text-decoration: none;
+  color: black;
+}
+
 .header__name {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;

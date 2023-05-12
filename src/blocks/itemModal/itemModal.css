@@ -1,6 +1,14 @@
 .item-modal__content {
   padding: 0;
   position: relative;
+  background-color: white;
+  max-width: 496px;
+  width: 100%;
+  border-radius: 20px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  position: relative;
 }
 
 .item-modal__close-icon {
@@ -23,6 +31,7 @@
   margin-bottom: 12px;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
+  font-size: 20px;
 }
 
 .item-modal__weather {
@@ -31,4 +40,21 @@
   margin-bottom: 32px;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
+  font-size: 20px;
+}
+
+.item-modal__delete {
+  position: absolute;
+  right: 32px;
+  bottom: 66px;
+  background: white;
+  border: none;
+  color: red;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.item-modal__delete:hover {
+  cursor: pointer;
 }

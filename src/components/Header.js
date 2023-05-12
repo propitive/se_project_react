@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom/cjs/react-router-dom";
 import logoPath from "../images/logo.svg";
 import avatarPath from "../images/avatar.svg";
 import Checkbox from "./Checkbox";
@@ -11,20 +12,14 @@ function Header({ onCreateModal, location }) {
   return (
     <header className="header">
       <div className="header__first-section">
-        <img src={logoPath} alt="logo" className="header__logo" />
+        <Link to="/">
+          <img src={logoPath} alt="logo" className="header__logo" />
+        </Link>
         <h2 className="header__date">
           {currentDate}, {location}
         </h2>
       </div>
       <div className="header__second-section">
-        {/* <label className="header__switch">
-          <input className="header__toggle" type="checkbox" />
-          <span className="header__slider"></span>
-          <div className="header__toggle_text_section">
-            <p className="header__toggle_text_f">F</p>
-            <p className="header__toggle_text_c">C</p>
-          </div>
-        </label> */}
         <Checkbox />
         <button
           type="button"
@@ -33,7 +28,9 @@ function Header({ onCreateModal, location }) {
         >
           + New Clothes
         </button>
-        <div className="header__name">Terrence Tegegne</div>
+        <Link className="header__profile-link" to="/profile">
+          <div className="header__name">Terrence Tegegne</div>
+        </Link>
         <img src={avatarPath} alt="logo" className="header__avatar" />
       </div>
     </header>

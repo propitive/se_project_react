@@ -1,7 +1,14 @@
 import "../blocks/modalWithForm/modalWithForm.css";
 import closeButtonForms from "../images/close-icon-forms.png";
 
-function ModalWithForm({ children, buttonText, title, onClose, name }) {
+function ModalWithForm({
+  children,
+  buttonText,
+  title,
+  onClose,
+  name,
+  onSubmit,
+}) {
   return (
     <div className={`modal modal_type_${name}`}>
       <div className="modal__content">
@@ -12,10 +19,13 @@ function ModalWithForm({ children, buttonText, title, onClose, name }) {
           onClick={onClose}
         />
         <h3 className="modal-form__title">{title}</h3>
-        <form>{children}</form>
-        <button type="submit" className="modal-form__button">
-          {buttonText}
-        </button>
+        <form onSubmit={onSubmit}>
+          {children}
+          {/* {children} */}
+          <button type="submit" className="modal-form__button">
+            {buttonText}
+          </button>
+        </form>
       </div>
     </div>
   );
