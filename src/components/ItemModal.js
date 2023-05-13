@@ -20,7 +20,8 @@ function ItemModal({ card, onClose, onDelete }) {
         <button
           type="button"
           className="item-modal__delete"
-          onClick={onDelete(card)} //Causing card to be deleted when the card is initially clicked on
+          //Causing card to be deleted when the card is initially clicked on
+          onClick={() => onDelete(card)}
         >
           Delete item
         </button>

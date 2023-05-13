@@ -24,3 +24,23 @@ export function parseWeatherLocation(data) {
   const city = data.name;
   return city;
 }
+
+export function handleRetriveType(data) {
+  const weather = data.weather;
+  const weatherType = weather[0].main;
+  return weatherType;
+}
+
+export function handleRetrieveSunrise(data) {
+  const sys = data.sys;
+  const sunrise = sys.sunrise;
+  console.log(sunrise);
+  return sunrise;
+}
+
+export function handleRetrieveSunset(data) {
+  const sys = data.sys;
+  const sunset = sys.sunset;
+  console.log(sunset);
+  return sunset;
+}

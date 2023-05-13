@@ -1,13 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import WeatherCard from "./WeatherCard";
 import ItemCard from "./ItemCard";
 import { defaultClothingItems } from "../utils/constants";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
+import {
+  getForecastWeather,
+  handleRetrieveDay,
+  handleRetrieveSunrise,
+  handleRetrieveSunset,
+  handleRetriveType,
+} from "../utils/weatherApi";
 
 function Main({ weatherTemp, onSelectCard, clothingItems }) {
   const currentTemperatureUnit = React.useContext(
     CurrentTemperatureUnitContext
   );
+  const [apiWeatherType, setApiWeatherType] = useState("sunny");
+  const [sunriseValue, setSunriseValue] = useState(0);
+  const [sunsetValue, setSunsetValue] = useState(0);
+  const [timeNow, setTimeNow] = useState(0);
 
   const weatherTempString = weatherTemp.toString();
   const weatherTempStringArray = weatherTempString.split("°", 2);
@@ -48,9 +59,46 @@ function Main({ weatherTemp, onSelectCard, clothingItems }) {
     return item.weather.toLowerCase() === weatherType;
   });
 
+  useEffect(() => {
+    getForecastWeather().then((data) => {
+      const weatherType = handleRetriveType(data);
+      const weatherTypeString = `${weatherType}`;
+      setApiWeatherType(weatherTypeString);
+    });
+  });
+
+  useEffect(() => {
+    getForecastWeather().then((data) => {
+      const sunrise = handleRetrieveSunrise(data);
+      const sunriseInSeconds = sunrise / 1000;
+      setSunriseValue(sunriseInSeconds);
+      console.log(`The sunrise value is => ${sunriseValue}`);
+
+      const sunset = handleRetrieveSunset(data);
+      const sunsetInSeconds = sunset / 1000;
+      setSunsetValue(sunsetInSeconds);
+      console.log(`The sunset value is => ${sunsetValue}`);
+    });
+  });
+
   return (
     <section className="main">
-      <WeatherCard day={false} type="cloudy" weatherTemp={weatherTemp} />
+      <WeatherCard
+        day={
+          sunriseValue < Date.now() && Date.now() > sunsetValue ? true : false
+        }
+        type={
+          apiWeatherType !== "cloudy" ||
+          "fog" ||
+          "rain" ||
+          "snow" ||
+          "storm" ||
+          "sunny"
+            ? "sunny"
+            : "sunny"
+        }
+        weatherTemp={weatherTemp}
+      />
       <section className="card-section" id="card-section">
         <div className="card-section__text">
           Today is {weatherTemp} / You may want to wear this:
