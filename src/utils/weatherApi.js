@@ -34,13 +34,11 @@ export function handleRetriveType(data) {
 export function handleRetrieveSunrise(data) {
   const sys = data.sys;
   const sunrise = sys.sunrise;
-  console.log(sunrise);
   return sunrise;
 }
 
 export function handleRetrieveSunset(data) {
   const sys = data.sys;
   const sunset = sys.sunset;
-  console.log(sunset);
   return sunset;
 }

@@ -69,12 +69,10 @@ function Main({ weatherTemp, onSelectCard, clothingItems }) {
       const sunrise = handleRetrieveSunrise(data);
       const sunriseInSeconds = sunrise / 1000;
       setSunriseValue(sunriseInSeconds);
-      console.log(`The sunrise value is => ${sunriseValue}`);
 
       const sunset = handleRetrieveSunset(data);
       const sunsetInSeconds = sunset / 1000;
       setSunsetValue(sunsetInSeconds);
-      console.log(`The sunset value is => ${sunsetValue}`);
     });
   });
 

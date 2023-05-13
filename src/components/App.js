@@ -58,7 +58,6 @@ function App() {
       .getItemList()
       .then((items) => {
         setClothingItems(items);
-        console.log("we got the cards!");
       })
       .catch((err) => console.log(err));
   }, []);
@@ -77,7 +76,6 @@ function App() {
     setActiveModal("");
     document.removeEventListener("keyup", handleEscUp);
     document.removeEventListener("click", handleOverlayClick);
-    console.log("close!");
   };
 
   const handleSelectedCard = (card) => {
@@ -107,11 +105,9 @@ function App() {
   };
 
   const handleItemSubmit = (item) => {
-    console.log(item);
     api
       .addItem(item)
       .then((newItem) => {
-        console.log("handleItemSubmit");
         setClothingItems([newItem, ...clothingItems]);
         handleCloseModal();
       })
