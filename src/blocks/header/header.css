@@ -159,6 +159,7 @@
 
 .header__button:hover {
   cursor: pointer;
+  color: rgb(0, 0, 0, 0.5);
 }
 
 .header__profile-link {
