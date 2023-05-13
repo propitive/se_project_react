@@ -17,12 +17,8 @@ export function AddItemModal({ isOpen, onCloseModal, onAddItem }) {
   };
 
   useEffect(() => {
-    isOpen === "false" && setInputValue("");
+    isOpen === "false" && setName("") && setImageUrl("") && setWeather("");
   });
-
-  //   const handleReset = () => {
-  //     setInputValue("");
-  //   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -37,7 +33,6 @@ export function AddItemModal({ isOpen, onCloseModal, onAddItem }) {
       buttonText="Add garment"
       onSubmit={handleSubmit}
     >
-      {/* <form onSubmit={handleSubmit}> */}
       <label>
         <h2 className="new-garment-modal__title-name">Name</h2>
         <input
@@ -59,7 +54,6 @@ export function AddItemModal({ isOpen, onCloseModal, onAddItem }) {
           name="link"
           placeholder="Image URL"
           minLength="1"
-          maxLength="30"
           className="new-garment-modal__input form__input"
           value={imageUrl}
           onChange={handleImageUrlChange}

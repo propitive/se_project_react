@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import WeatherCard from "./WeatherCard";
 import ItemCard from "./ItemCard";
-import { defaultClothingItems } from "../utils/constants";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
 import {
   getForecastWeather,
-  handleRetrieveDay,
   handleRetrieveSunrise,
   handleRetrieveSunset,
   handleRetriveType,
@@ -18,7 +16,6 @@ function Main({ weatherTemp, onSelectCard, clothingItems }) {
   const [apiWeatherType, setApiWeatherType] = useState("sunny");
   const [sunriseValue, setSunriseValue] = useState(0);
   const [sunsetValue, setSunsetValue] = useState(0);
-  const [timeNow, setTimeNow] = useState(0);
 
   const weatherTempString = weatherTemp.toString();
   const weatherTempStringArray = weatherTempString.split("°", 2);

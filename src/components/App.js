@@ -3,12 +3,12 @@ import {
   Route,
   Switch,
   BrowserRouter,
+  HashRouter,
 } from "react-router-dom/cjs/react-router-dom.min";
 import "../index.css";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
-import ModalWithForm from "./ModalWithForm";
 import ItemModal from "./ItemModal";
 import Profile from "./Profile";
 import {
@@ -16,11 +16,7 @@ import {
   parseWeatherData,
   parseWeatherLocation,
 } from "../utils/weatherApi";
-import {
-  CurrentTemperatureUnitContext,
-  currentTemperatureUnit,
-  handleToggleSwitchChange,
-} from "../contexts/CurrentTemperatureUnitContext";
+import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
 import { api } from "../utils/api";
 import AddItemModal from "./AddItemModal";
 
@@ -133,7 +129,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="page">
         <div className="page__wrapper">
           <CurrentTemperatureUnitContext.Provider
@@ -177,7 +173,7 @@ function App() {
           </CurrentTemperatureUnitContext.Provider>
         </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
