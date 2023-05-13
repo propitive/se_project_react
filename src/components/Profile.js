@@ -1,10 +1,10 @@
-import ToggleSwitch from "./ToggleSwitch";
 import ClothesSection from "./ClothesSection";
+import SideBar from "./SideBar";
 
 export function Profile({ onSelectCard, clothingItems }) {
   return (
     <section className="profile">
-      <ToggleSwitch />
+      <SideBar />
       <ClothesSection
         clothingItems={clothingItems}
         onSelectCard={onSelectCard}
