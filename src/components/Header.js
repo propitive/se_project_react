@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import logoPath from "../images/logo.svg";
 import avatarPath from "../images/avatar.svg";
-import Checkbox from "./Checkbox";
+import Checkbox from "./ToggleSwitch";
 
 function Header({ onCreateModal, location }) {
   const currentDate = new Date().toLocaleString("default", {
