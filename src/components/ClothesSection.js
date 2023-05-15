@@ -11,7 +11,7 @@ export function ClothesSection({ onSelectCard, clothingItems }) {
       <div className="clothesSection__items">
         {clothingItems.map((card) => {
           return (
-            <ItemCard key={card._id} card={card} onSelectCard={onSelectCard} />
+            <ItemCard key={card.id} card={card} onSelectCard={onSelectCard} />
           );
         })}
       </div>

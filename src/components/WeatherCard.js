@@ -11,16 +11,14 @@ function WeatherCard({ day, type, weatherTemp = "" }) {
   const weatherOptionSrcUrl = weatherOption.url || "";
 
   return (
-    <>
-      <section className="weather" id="header">
-        <div className="weather__info">{weatherTemp}</div>
-        <img
-          src={weatherOptionSrcUrl}
-          alt="weather-app"
-          className="weather__image"
-        />
-      </section>
-    </>
+    <section className="weather" id="header">
+      <div className="weather__info">{weatherTemp}</div>
+      <img
+        src={weatherOptionSrcUrl}
+        alt="weather-app"
+        className="weather__image"
+      />
+    </section>
   );
 }
 

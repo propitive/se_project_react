@@ -57,24 +57,22 @@ function Main({ weatherTemp, onSelectCard, clothingItems }) {
   });
 
   useEffect(() => {
-    getForecastWeather().then((data) => {
-      const weatherType = handleRetriveType(data);
-      const weatherTypeString = `${weatherType}`;
-      setApiWeatherType(weatherTypeString);
-    });
-  });
+    getForecastWeather()
+      .then((data) => {
+        const weatherType = handleRetriveType(data);
+        const weatherTypeString = `${weatherType}`;
+        setApiWeatherType(weatherTypeString);
 
-  useEffect(() => {
-    getForecastWeather().then((data) => {
-      const sunrise = handleRetrieveSunrise(data);
-      const sunriseInSeconds = sunrise / 1000;
-      setSunriseValue(sunriseInSeconds);
+        const sunrise = handleRetrieveSunrise(data);
+        const sunriseInSeconds = sunrise / 1000;
+        setSunriseValue(sunriseInSeconds);
 
-      const sunset = handleRetrieveSunset(data);
-      const sunsetInSeconds = sunset / 1000;
-      setSunsetValue(sunsetInSeconds);
-    });
-  });
+        const sunset = handleRetrieveSunset(data);
+        const sunsetInSeconds = sunset / 1000;
+        setSunsetValue(sunsetInSeconds);
+      })
+      .catch(console.error); // don't forget about `catch`
+  }, []); // and about the empty array
 
   return (
     <section className="main">
@@ -102,11 +100,7 @@ function Main({ weatherTemp, onSelectCard, clothingItems }) {
         <div className="card-section__items">
           {filteredCards.map((card) => {
             return (
-              <ItemCard
-                key={card._id}
-                card={card}
-                onSelectCard={onSelectCard}
-              />
+              <ItemCard key={card.id} card={card} onSelectCard={onSelectCard} />
             );
           })}
         </div>
