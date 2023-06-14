@@ -10,3 +10,5 @@
 @import url(./blocks/sidebar/sidebar.css);
 @import url(./blocks/profile/profile.css);
 @import url(./blocks/clothesSection/clothesSection.css);
+@import url("./blocks/registerModal/registerModal.css");
+@import url("./blocks/loginModal/loginModal.css");

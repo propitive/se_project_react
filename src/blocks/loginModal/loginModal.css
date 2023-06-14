@@ -1,0 +1,57 @@
+.login-modal__header {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.login-modal__input {
+  border-style: none none solid none;
+  border-bottom-width: 1px;
+  margin-bottom: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  width: 100%;
+}
+
+.login-modal__input__last {
+  border-style: none none solid none;
+  border-bottom-width: 1px;
+  margin-bottom: 32px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  width: 100%;
+}
+
+.login-modal__submit {
+  width: 80px;
+  height: 36px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  padding: 0;
+  border-radius: 10%;
+  color: white;
+  background-color: black;
+}
+
+.login-modal__submit:hover {
+  cursor: pointer;
+  background-color: rgb(0, 0, 0, 0.6);
+}
+
+.login-modal__button {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  position: absolute;
+  left: 120px;
+  bottom: 43px;
+  background: none;
+  border: none;
+  color: gray;
+}

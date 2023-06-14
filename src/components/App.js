@@ -11,14 +11,28 @@ import Main from "./Main";
 import Footer from "./Footer";
 import ItemModal from "./ItemModal";
 import Profile from "./Profile";
+import RegisterModal from "./RegisterModal";
 import {
   getForecastWeather,
   parseWeatherData,
   parseWeatherLocation,
 } from "../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
+import CurrentModalOpenedContext from "../contexts/CurrentModalOpened";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 import { api } from "../utils/api";
 import AddItemModal from "./AddItemModal";
+import LoginModal from "./LoginModal";
+import { signup, signin, checkToken } from "../utils/auth";
+
+const express = require("express");
+const mongoose = require("mongoose");
+
+const { PORT = 3000 } = process.env;
+const app = express();
+mongoose.connect("mongodb://127.0.0.1:27017/wtwr_db", (r) => {
+  console.log("connected to DB", r);
+});
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -32,6 +46,10 @@ function App() {
   });
   const [city, setCity] = useState("Unknown");
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [currentUser, setCurrentUser] = useState({});
+  const [alternateAvatar, setAlternateAvatar] = useState("");
 
   // The App component makes an API request for the weather data (only once - on mounting).
   useEffect(() => {
@@ -70,6 +88,14 @@ function App() {
 
   const handleCreateModal = () => {
     handleModal("create");
+  };
+
+  const handleSignInModal = () => {
+    handleModal("login");
+  };
+
+  const handleSignUpModal = () => {
+    handleModal("register");
   };
 
   const handleCloseModal = () => {
@@ -124,6 +150,57 @@ function App() {
       .catch((err) => console.log(err));
   };
 
+  const handleSignupSubmit = (values) => {
+    const { email, password } = values;
+
+    signup(values)
+      .then((res) => {
+        handleLoginSubmit({ email, password });
+        handleCloseModal();
+      })
+      .catch((err) => {});
+  };
+
+  const handleLoginSubmit = ({ email, password }) => {
+    const user = { email, password };
+
+    signin(user).then((res) => {
+      localStorage.setItem("token", res.token);
+
+      checkToken(res.token).then((res) => {
+        setCurrentUser(res);
+        setAlternateAvatar(getUserFirstLetter(res.name));
+        setIsLoggedIn(true);
+      });
+      handleCloseModal();
+    });
+  };
+
+  const getUserFirstLetter = (name) => {
+    const firstletter = name.slice(0, 1);
+    return firstletter;
+  };
+
+  function getLocalToken() {
+    return localStorage.getItem("token");
+  }
+
+  function checkAccess() {
+    const jwt = getLocalToken();
+
+    if (jwt) {
+      checkToken(jwt)
+        .then((res) => {
+          setCurrentUser(res);
+          setAlternateAvatar(getUserFirstLetter(res.name));
+          setIsLoggedIn(true);
+        })
+        .catch((err) => {
+          console.log("No token found", err.message);
+        });
+    }
+  }
+
   return (
     <HashRouter>
       <div className="page">
@@ -131,41 +208,58 @@ function App() {
           <CurrentTemperatureUnitContext.Provider
             value={{ currentTemperatureUnit, handleToggleSwitchChange }}
           >
-            <Header onCreateModal={handleCreateModal} location={city} />
-            <Switch>
-              <Route path="/profile">
-                <Profile
-                  onSelectCard={handleSelectedCard}
-                  clothingItems={clothingItems}
+            <CurrentModalOpenedContext.Provider value={activeModal}>
+              <CurrentUserContext.Provider
+                value={{ isLoggedIn, currentUser, alternateAvatar }}
+              >
+                <Header
+                  onCreateModal={handleCreateModal}
+                  location={city}
+                  onLogIn={handleSignInModal}
+                  onSignUp={handleSignUpModal}
                 />
-              </Route>
-              <Route exact path="/">
-                <Main
-                  weatherTemp={
-                    currentTemperatureUnit === "F"
-                      ? temp.temperature.F
-                      : temp.temperature.C
-                  }
-                  onSelectCard={handleSelectedCard}
-                  clothingItems={clothingItems}
-                />
-              </Route>
-            </Switch>
-            <Footer />
-            {activeModal === "create" && (
-              <AddItemModal
-                isOpen={activeModal === "create" ? true : false}
-                onCloseModal={handleCloseModal}
-                onAddItem={handleItemSubmit}
-              />
-            )}
-            {activeModal === "preview" && (
-              <ItemModal
-                card={selectedCard}
-                onClose={handleCloseModal}
-                onDelete={handleCardDelete}
-              />
-            )}
+                <Switch>
+                  <Route path="/profile">
+                    <Profile
+                      onSelectCard={handleSelectedCard}
+                      clothingItems={clothingItems}
+                    />
+                  </Route>
+                  <Route exact path="/">
+                    <Main
+                      weatherTemp={
+                        currentTemperatureUnit === "F"
+                          ? temp.temperature.F
+                          : temp.temperature.C
+                      }
+                      onSelectCard={handleSelectedCard}
+                      clothingItems={clothingItems}
+                    />
+                  </Route>
+                </Switch>
+                <Footer />
+                {activeModal === "create" && (
+                  <AddItemModal
+                    isOpen={activeModal === "create" ? true : false}
+                    onCloseModal={handleCloseModal}
+                    onAddItem={handleItemSubmit}
+                  />
+                )}
+                {activeModal === "preview" && (
+                  <ItemModal
+                    card={selectedCard}
+                    onClose={handleCloseModal}
+                    onDelete={handleCardDelete}
+                  />
+                )}
+                {activeModal === "register" && (
+                  <RegisterModal onCloseModal={handleCloseModal} />
+                )}
+                {activeModal === "login" && (
+                  <LoginModal onCloseModal={handleCloseModal} />
+                )}
+              </CurrentUserContext.Provider>
+            </CurrentModalOpenedContext.Provider>
           </CurrentTemperatureUnitContext.Provider>
         </div>
       </div>
@@ -174,3 +268,8 @@ function App() {
 }
 
 export default App;
+
+app.listen(PORT, () => {
+  console.log(`App listening at port ${PORT}`);
+  console.log("This is working");
+});

@@ -11,11 +11,12 @@ const getItemList = () => {
   }).then(processServerResponse);
 };
 
-const addItem = ({ name, weather, imageUrl }) => {
+const addItem = ({ name, weather, imageUrl }, token) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
       name,
@@ -25,17 +26,24 @@ const addItem = ({ name, weather, imageUrl }) => {
   }).then(processServerResponse);
 };
 
-const removeItem = (id) => {
+const removeItem = (id, token) => {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     },
   }).then(processServerResponse);
 };
+
+export async function request(url, options) {
+  const res = await fetch(url, options);
+  return processServerResponse(res);
+}
 
 export const api = {
   getItemList,
   addItem,
   removeItem,
+  request,
 };

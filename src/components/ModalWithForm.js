@@ -1,3 +1,5 @@
+import React from "react";
+import CurrentModalOpenedContext from "../contexts/CurrentModalOpened";
 import "../blocks/modalWithForm/modalWithForm.css";
 import closeButtonForms from "../images/close-icon-forms.png";
 
@@ -9,6 +11,8 @@ function ModalWithForm({
   name,
   onSubmit,
 }) {
+  const openedModal = React.useContext(CurrentModalOpenedContext);
+
   return (
     <div className={`modal modal_type_${name}`}>
       <div className="modal__content">
@@ -21,9 +25,25 @@ function ModalWithForm({
         <h3 className="modal-form__title">{title}</h3>
         <form onSubmit={onSubmit}>
           {children}
-          <button type="submit" className="modal-form__button">
+
+          {openedModal === "create" && (
+            <button type="submit" className="modal-form__button">
+              {buttonText}
+            </button>
+          )}
+          {openedModal === "register" && (
+            <button type="submit" className="register-modal__submit">
+              {buttonText}
+            </button>
+          )}
+          {openedModal === "login" && (
+            <button type="submit" className="login-modal__submit">
+              {buttonText}
+            </button>
+          )}
+          {/* <button type="submit" className="modal-form__button">
             {buttonText}
-          </button>
+          </button> */}
         </form>
       </div>
     </div>

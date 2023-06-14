@@ -94,7 +94,6 @@ export function AddItemModal({ isOpen, onCloseModal, onAddItem }) {
           <label>Cold</label>
         </div>
       </label>
-      {/* </form> */}
     </ModalWithForm>
   );
 }

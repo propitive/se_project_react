@@ -1,6 +1,16 @@
+import React from "react";
 import closeButton from "../images/close-button.svg";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
 function ItemModal({ card, onClose, onDelete }) {
+  const { currentUser } = React.useContext(CurrentUserContext);
+
+  const isOwn = card.owner === currentUser._id;
+
+  const itemDeleteButtonClassName = `item-modal__delete ${
+    isOwn ? "item-modal__visible" : "item-modal__hidden"
+  }`;
+
   return (
     <div className={`modal`}>
       <div className="item-modal__content">
@@ -17,14 +27,16 @@ function ItemModal({ card, onClose, onDelete }) {
         />
         <div className="item-modal__type">{card.name}</div>
         <div className="item-modal__weather">Weather type: {card.weather}</div>
-        <button
-          type="button"
-          className="item-modal__delete"
-          //Causing card to be deleted when the card is initially clicked on
-          onClick={() => onDelete(card)}
-        >
-          Delete item
-        </button>
+        {isOwn && (
+          <button
+            type="button"
+            className={itemDeleteButtonClassName}
+            //Causing card to be deleted when the card is initially clicked on
+            onClick={() => onDelete(card)}
+          >
+            Delete item
+          </button>
+        )}
       </div>
     </div>
   );
