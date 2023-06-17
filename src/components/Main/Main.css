@@ -1,0 +1,23 @@
+.main {
+  flex-wrap: wrap;
+}
+
+.main__items {
+  display: flex;
+  gap: 17px 17px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.main__description-container {
+  font-family: "Cabinet Grotesk";
+  font-weight: 700;
+  font-size: 20px;
+  position: relative;
+  left: 15px;
+}
+
+.main__info {
+  margin-top: 20px;
+}

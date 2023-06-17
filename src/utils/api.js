@@ -1,49 +1,95 @@
-import { processServerResponse } from "./weatherApi";
+// const BASE_URL =
+//   process.env.NODE_ENV === "production"
+//     ? "https://api.wtwr.crabdance.com"
+//     : "http://localhost:3001";
 
-const baseUrl =
-  "https://my-json-server.typicode.com/propitive/se_project_react";
+const BASE_URL = "http://localhost:3001";
 
-const getItemList = () => {
-  return fetch(`${baseUrl}/items`, {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then(processServerResponse);
+const Api = {
+  request: async (url, options = {}) => {
+    const response = await fetch(url, options);
+    if (response.ok) {
+      return await response.json();
+    }
+    const error = new Error(
+      `Error ${response.status}: ${await response.text()}`
+    );
+    throw error;
+  },
+
+  getCards: async (token) => {
+    const url = `${BASE_URL}/items`;
+
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    return await Api.request(url, options);
+  },
+
+  addCard: async ({ name, imageUrl, weather }) => {
+    const token = localStorage.getItem("token");
+    const url = `${BASE_URL}/items`;
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ name, imageUrl, weather }),
+    };
+    return await Api.request(url, options);
+  },
+
+  deleteCard: async (_id, token) => {
+    const url = `${BASE_URL}/items/${_id}`;
+    const options = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    return await Api.request(url, options);
+  },
+  addCardLike: async (_id, token) => {
+    const url = `${BASE_URL}/items/${_id}/likes`;
+    const options = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    return await Api.request(url, options);
+  },
+  updateUserInfo: async (name, avatar, token) => {
+    const url = `${BASE_URL}/users/me`;
+    const options = {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ name, avatar }),
+    };
+    return await Api.request(url, options);
+  },
+
+  removeCardLike: async (_id, token) => {
+    const url = `${BASE_URL}/items/${_id}/likes`;
+    const options = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    return await Api.request(url, options);
+  },
 };
 
-const addItem = ({ name, weather, imageUrl }, token) => {
-  return fetch(`${baseUrl}/items`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify({
-      name,
-      weather,
-      imageUrl,
-    }),
-  }).then(processServerResponse);
-};
-
-const removeItem = (id, token) => {
-  return fetch(`${baseUrl}/items/${id}`, {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  }).then(processServerResponse);
-};
-
-export async function request(url, options) {
-  const res = await fetch(url, options);
-  return processServerResponse(res);
-}
-
-export const api = {
-  getItemList,
-  addItem,
-  removeItem,
-  request,
-};
+export default Api;

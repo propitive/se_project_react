@@ -1,49 +1,44 @@
-import { request } from "./api";
-export const BASE_URL = "http://localhost:3001";
+const BASE_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://api.wtwr.crabdance.com"
+    : "http://localhost:3001";
 
-export const signup = (data) => {
-  const { name, avatar, email, password } = data;
+const handleResponse = (res) => {
+  if (!res.ok) {
+    return res.json().then((error) => Promise.reject(error));
+  }
+  return res.json();
+};
 
+export function signUp(name, avatar, email, password) {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ name, avatar, email, password }),
-  });
-};
+  }).then(handleResponse);
+}
 
-export const signin = (user) => {
-  const { email, password } = user;
-
+export function signIn(email, password) {
   return fetch(`${BASE_URL}/signin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  });
-};
+  }).then(handleResponse);
+}
 
 export function checkToken(token) {
-  return request(`${BASE_URL}/users/me`, {
+  return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+      authorization: `Bearer ${token}`,
     },
-  });
+  }).then(handleResponse);
 }
 
-export function updateUser(data) {
-  const { name, avatar, token } = data;
-
-  return request(`${BASE_URL}/users/me`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: JSON.stringify({ name, avatar }),
-  });
-}
+const auth = { signIn, signUp, checkToken };
+export default auth;

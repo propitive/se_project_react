@@ -1,14 +1,30 @@
-@import url(./blocks/app/app.css);
-@import url(./blocks/cardSection/cardSection.css);
-@import url(./blocks/footer/footer.css);
-@import url(./blocks/header/header.css);
-@import url(./blocks/itemModal/itemModal.css);
-@import url(./blocks/modalWithForm/modalWithForm.css);
-@import url(./blocks/newGarmentModal/newGarmentModal.css);
-@import url(./blocks/page/page.css);
-@import url(./blocks/weatherCard/weatherCard.css);
-@import url(./blocks/sidebar/sidebar.css);
-@import url(./blocks/profile/profile.css);
-@import url(./blocks/clothesSection/clothesSection.css);
-@import url("./blocks/registerModal/registerModal.css");
-@import url("./blocks/loginModal/loginModal.css");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap");
+
+@import url(./components/App/App.css);
+@import url(./components/CardDeleteModal/CardDeleteModal.css);
+@import url(./components/ClothesSection/ClothesSection.css);
+@import url(./components/Footer/Footer.css);
+@import url(./components/Header/Header.css);
+@import url(./components/Header/Navigation.css);
+@import url(./components/ItemCard/ItemCard.css);
+@import url(./components/ItemModal/ItemModal.css);
+@import url(./components/Main/Main.css);
+@import url(./components/ModalWithForm/ModalWithForm.css);
+@import url(./components/Profile/Profile.css);
+@import url(./components/SideBar/SideBar.css);
+@import url(./components/ToggleSwitch/ToggleSwitch.css);
+@import url(./components/WeatherCard/WeatherCard.css);
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

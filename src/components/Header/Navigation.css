@@ -1,0 +1,36 @@
+.navigation__container {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  background-color: #00a3ff;
+  border-radius: 12px;
+}
+
+.navigation__user {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.navigation__button {
+  font-family: "Cabinet Grotesk";
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+}
+
+.navigation__username {
+  font-family: "Cabinet Grotesk";
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.navigation__link {
+  cursor: pointer;
+}

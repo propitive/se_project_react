@@ -1,0 +1,75 @@
+.item-modal__preview {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-top-right-radius: 10px;
+  font-family: "Cabinet Grotesk";
+  z-index: 3;
+}
+
+.item-modal__container {
+  background: #ffffff;
+  border-radius: 16px;
+  border-top-right-radius: 10px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.item-modal__preview-image {
+  display: flex;
+  object-fit: cover;
+  max-width: 400px;
+}
+
+.item-modal__close-button {
+  background: url(../../images/close-button.png) center no-repeat;
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.item-modal__title {
+  font-family: "Cabinet Grotesk";
+  font-weight: 700;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.item-modal__weather {
+  font-family: "Cabinet Grotesk";
+  font-weight: 700;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.item-modal__delete {
+  font-family: "Cabinet Grotesk";
+  color: rgba(255, 77, 0, 1);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 24px;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.item-modal__content {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
