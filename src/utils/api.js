@@ -1,5 +1,6 @@
 const BASE_URL = "http://localhost:3001";
 
+// error may be caused from here
 const Api = {
   request: async (url, options = {}) => {
     const response = await fetch(url, options);
