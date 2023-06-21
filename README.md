@@ -62,4 +62,4 @@ When the user clicks on any card, a modal will appear that will expand the cloth
 
 ### 'Backend'
 
-The GitHub repo for the backend is available: [https://github.com/propitive/se_project_express](here).
+The GitHub repo for the backend is available [here](https://github.com/propitive/se_project_express).
