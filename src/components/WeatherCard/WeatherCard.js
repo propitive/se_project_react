@@ -1,40 +1,18 @@
 import { useContext } from "react";
 import "./WeatherCard.css";
 import { CurrentTemperatureUnitContext } from "../../context/CurrentTemperatureUnit";
-import sunnyDay from "../../images/weatherConditions/day/sunny.svg";
-import cloudyDay from "../../images/weatherConditions/day/cloudy.svg";
-import fogDay from "../../images/weatherConditions/day/fog.svg";
+import { weatherOptions } from "../../utils/constants";
 
-const weatherImages = [
-  {
-    condition: "hot",
-    isDay: true,
-    image: sunnyDay,
-  },
-  {
-    condition: "warm",
-    isDay: true,
-    image: cloudyDay,
-  },
-  {
-    condition: "cold",
-    isDay: true,
-    image: fogDay,
-  },
-];
-
-function WeatherCard({ weatherData }) {
+function WeatherCard({ weatherData, day, type }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
-  if (!weatherData.condition) {
-    return null;
-  }
+  const findWeather = (weatherOption) => {
+    return weatherOption.day === day && weatherOption.type === type;
+  };
+  const weatherOption = weatherOptions.find(findWeather);
+  const weatherOptionSrcUrl = weatherOption.url || "";
 
-  const backImage = weatherData
-    ? weatherImages.find((item) => {
-        return item.condition === weatherData.condition();
-      })
-    : null;
+  console.log(weatherOptionSrcUrl);
 
   return (
     <div className="weather">
@@ -45,11 +23,7 @@ function WeatherCard({ weatherData }) {
             : `${Math.round(((weatherData.temperature - 32) * 5) / 9)} °C`}
         </p>
       )}
-      <img
-        src={backImage?.image || ""}
-        className="weather__image"
-        alt="Weather"
-      />
+      <img src={weatherOptionSrcUrl} className="weather__image" alt="Weather" />
     </div>
   );
 }

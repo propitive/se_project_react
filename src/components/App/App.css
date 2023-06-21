@@ -1,9 +1,11 @@
 .page {
   background-color: white;
-  padding: 30px, 30x, 30px, 30px;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .page__wrapper {
   margin: 0 auto;
-  max-width: 1600px;
+  max-width: calc(100% - 80px);
 }

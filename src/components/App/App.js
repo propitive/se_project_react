@@ -22,7 +22,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 
-const APIKey = process.env.REACT_APP_WEATHER_API_KEY;
+const APIKey = "44d763e20353ebef92d497833d045a80";
 
 const App = () => {
   const [weatherData, setWeatherData] = useState({});
@@ -124,7 +124,7 @@ const App = () => {
   };
 
   const handleAddCardSubmit = (name, link, weather) => {
-    Api.addCard({ name, imageUrl: link, weather })
+    Api.addCard({ name, imageUrl: link, weather, isLiked: false })
       .then((newCard) => {
         setCards([...cards, newCard]);
         closeAllModals();
@@ -155,7 +155,6 @@ const App = () => {
   };
 
   const handleLike = (card) => {
-    console.log(card._id);
     const { _id: id, isLiked } = card;
     const token = localStorage.getItem("token");
     if (isLiked) {
@@ -208,6 +207,7 @@ const App = () => {
     if (token) {
       Api.getCards(token)
         .then(({ data }) => {
+          debugger;
           setCards(data);
         })
         .catch((error) => {
@@ -282,7 +282,6 @@ const App = () => {
                     onItemDeleted={closeAllModals}
                   />
                 )}
-                {/* ... */}
                 {isLoginModalOpen && (
                   <LoginModal
                     isOpen={isLoginModalOpen}

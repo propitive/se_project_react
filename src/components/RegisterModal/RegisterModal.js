@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { SignUpValidation } from "../../utils/validation";
+import {
+  SignUpValidation,
+  SignUpEmailValidation,
+  SignUpPasswordValidation,
+  SignUpNameValidation,
+} from "../../utils/validation";
 
 function RegisterModal({ isOpen, onClose, onRegister, switchToLogin }) {
   const [name, setName] = useState("");
@@ -8,12 +13,57 @@ function RegisterModal({ isOpen, onClose, onRegister, switchToLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
+  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [isPasswordValid, setIsPasswordValid] = useState(false);
+  const [isNameValid, setIsNameValid] = useState(false);
 
   useEffect(() => {
     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/gim.test(email);
 
     setIsFormValid(SignUpValidation(email, password, name));
   }, [email, password, name]);
+
+  useEffect(() => {
+    setIsEmailValid(SignUpEmailValidation(email));
+  }, [email]);
+
+  useEffect(() => {
+    setIsPasswordValid(SignUpPasswordValidation(password));
+  }, [password]);
+
+  useEffect(() => {
+    setIsNameValid(SignUpNameValidation(name));
+  }, [name]);
+
+  useEffect(() => {
+    setIsPasswordValid(true);
+    setIsEmailValid(true);
+    setIsNameValid(true);
+  }, []);
+
+  const emailLabelClassName = isEmailValid
+    ? "login__label"
+    : "login__label-invalid";
+
+  const emailInputClassName = isEmailValid
+    ? "login__input"
+    : "login__input-invalid";
+
+  const passwordLabelClassName = isPasswordValid
+    ? "login__label"
+    : "login__label-invalid";
+
+  const passwordInputClassName = isPasswordValid
+    ? "login__input"
+    : "login__input-invalid";
+
+  const nameLabelClassName = isNameValid
+    ? "login__label"
+    : "login__label-invalid";
+
+  const nameInputClassName = isNameValid
+    ? "login__input"
+    : "login__input-invalid";
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -29,18 +79,18 @@ function RegisterModal({ isOpen, onClose, onRegister, switchToLogin }) {
       buttonText="Next"
       isValid={isFormValid}
     >
-      <label className="register__label">Email</label>
+      <label className={emailLabelClassName}>Email</label>
       <input
-        className="register__input"
+        className={emailInputClassName}
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Email"
         required
       />
-      <label className="register__label">Password</label>
+      <label className={passwordLabelClassName}>Password</label>
       <input
-        className="register__input"
+        className={passwordInputClassName}
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
@@ -48,9 +98,9 @@ function RegisterModal({ isOpen, onClose, onRegister, switchToLogin }) {
         required
         autoComplete="new-password"
       />
-      <label className="register__label">Name</label>
+      <label className={nameLabelClassName}>Name</label>
       <input
-        className="register__input"
+        className={nameInputClassName}
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
@@ -60,7 +110,7 @@ function RegisterModal({ isOpen, onClose, onRegister, switchToLogin }) {
       <label className="register__label">Avatar URL</label>
       <input
         className="register__input"
-        type="url"
+        type="text"
         value={avatar}
         onChange={(e) => setAvatar(e.target.value)}
         placeholder="Avatar URL"

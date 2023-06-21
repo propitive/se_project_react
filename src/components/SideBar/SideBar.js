@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "./SideBar.css";
-import avatarUser from "../../images/avatar.svg";
 import CurrentUserContext from "../../context/CurrentUserContext";
 function SideBar({ handleSignOut, handleEditProfileOpen }) {
   const currentUser = useContext(CurrentUserContext);
@@ -12,15 +11,25 @@ function SideBar({ handleSignOut, handleEditProfileOpen }) {
     history.push("/");
   };
 
+  console.log("This is current user -->" + currentUser);
+
   return (
     <div className="side-bar">
       <div className="side-bar__container">
-        <img
-          src={currentUser?.avatar || avatarUser}
-          alt="avatar"
-          className="side-bar__avatar"
-        />
-        <p className="side-bar__username">{currentUser?.name || "User"}</p>
+        <div className="side-bar__user-info">
+          {currentUser.avatar ? (
+            <img
+              className="navigation__user"
+              src={currentUser.avatar}
+              alt="user avatar"
+            />
+          ) : (
+            <button className="navigation__default">
+              {currentUser.name.charAt(0).toUpperCase()}
+            </button>
+          )}
+          <p className="side-bar__username">{currentUser?.name || "User"}</p>
+        </div>
         <button onClick={handleEditProfileOpen} className="side-bar__button">
           Change Profile Data
         </button>

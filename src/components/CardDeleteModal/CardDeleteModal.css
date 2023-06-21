@@ -17,7 +17,7 @@
 }
 
 .modal__message-line {
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -35,7 +35,7 @@
 
 .modal__yes {
   color: #ff4d00;
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -44,7 +44,7 @@
 }
 
 .modal__cancel {
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -53,7 +53,7 @@
 }
 
 .modal__close {
-  background: url(../../images/close-button.png) center no-repeat;
+  background: url(../../images/close-button.svg) center no-repeat;
   position: absolute;
   width: 14px;
   height: 14px;

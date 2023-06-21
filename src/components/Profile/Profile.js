@@ -31,11 +31,6 @@ function Profile({
 
   return (
     <div className="profile">
-      <div className="profile__title">Your Items</div>
-      <p className="profile__click" onClick={handleAddClick}>
-        + Add New
-      </p>
-      {/* Add onClick event handler */}
       <div className="profile-container">
         <SideBar
           currentUser={currentUser}

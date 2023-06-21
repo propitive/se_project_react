@@ -2,11 +2,21 @@ import React from "react";
 import ItemCard from "../ItemCard/ItemCard";
 import "./ClothesSection.css";
 
-const ClothesSection = ({ cards = [], onCardClick, onCardLike }) => {
+const ClothesSection = ({
+  cards = [],
+  onCardClick,
+  onCardLike,
+  handleAddClick,
+}) => {
   return (
     <div className="clothes-section">
-      {/* ... */}
-      <div className="clothes-cards-container">
+      <div className="clothes-section__nav">
+        <div className="clothes-section__title">Your Items</div>
+        <p className="clothes-section__add" onClick={handleAddClick}>
+          + Add New
+        </p>
+      </div>
+      <div className="clothes-section-container">
         {cards.map((card, index) => {
           return (
             <ItemCard

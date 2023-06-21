@@ -41,7 +41,7 @@
 .toggle-switch-label:before {
   content: "F";
   position: absolute;
-  font-family: "Cabinet-Grotesk";
+  font-family: "Space Grotesk";
   color: white;
   left: 0%;
   right: 50%;
@@ -61,7 +61,7 @@
 .toggle-switch-label:after {
   content: "C";
   position: absolute;
-  font-family: "Cabinet-Grotesk";
+  font-family: "Space Grotesk";
   color: rgba(0, 0, 0, 0.5);
   left: 50%;
   right: 0%;

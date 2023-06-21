@@ -3,7 +3,6 @@ import { Link, useHistory, useLocation } from "react-router-dom";
 import "../Header/Header.css";
 import "../Header/Navigation.css";
 import headerLogo from "../../images/logo.svg";
-import avatarUser from "../../images/avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import CurrentUserContext from "../../context/CurrentUserContext";
 
@@ -14,6 +13,11 @@ const Header = ({
   openRegisterModal,
   setUser,
 }) => {
+  const currentDate = new Date().toLocaleString("default", {
+    month: "long",
+    day: "numeric",
+  });
+
   const { city } = weatherData || {};
 
   const params = new URLSearchParams(window.location.search);
@@ -45,13 +49,7 @@ const Header = ({
           <Link to="/">
             <img src={headerLogo} alt="wtwr logo" className="header__logo" />
           </Link>
-          <p className="header__date">
-            {`${new Date().toLocaleDateString("default", {
-              month: "long",
-              day: "numeric",
-              year: "numeric",
-            })}, ${city}`}
-          </p>
+          <p className="header__date">{`${currentDate}, ${city}`}</p>
         </div>
 
         <div className="header__nav">
@@ -66,11 +64,17 @@ const Header = ({
                 {currentUser.name || username}
               </span>
               <Link to="/profile">
-                <img
-                  className="navigation__user"
-                  src={currentUser.avatar || avatarUser}
-                  alt="user avatar"
-                />
+                {currentUser.avatar ? (
+                  <img
+                    className="navigation__user"
+                    src={currentUser.avatar}
+                    alt="user avatar"
+                  />
+                ) : (
+                  <button className="navigation__default">
+                    {currentUser.name.charAt(0).toUpperCase()}
+                  </button>
+                )}
               </Link>
               {!isMainPage && !isProfilePage && (
                 <button onClick={handleSignOut} className="navigation__button">

@@ -2,11 +2,21 @@
 
 ### `Decription`
 
-Using the technologies and functionalities exclusive to React, I was able to create an application that presents the user with viable pieces of clothing the user can wear depending on the weather. Each of the garments have been assigned the weather ideal to be used in, which is what the application uses to deduce what clothes to display to the user.
+Using the technologies and functionalities exclusive to React, I created an application where a user can view the current temperature of a specfied city and create an account in which they can create clothing items.
+
+When the user is logged in, more functionality is permitted to the user:
+
+- The user is able to create clothing items
+- The user is able to access all clothing items
+- The user is able to "like" the cards the respective user has created
+- The user is able to update the respective user's name and avatar
+- The user is able to log off
+
+With the specified ideal weather to wear a piece of clothing in (provided by the user), the application is able to display the pieces of clothing ideal to wear in respect to the weather of the specified city.
 
 ### `Technologies and Techniques`
 
-Contrary to what I used on my last project, this project I used hooks available to developers using React. Specifically, I used useState() and useEffect().
+Contrary to the technologies I used on my last project, this project I used hooks available to developers using React. I used useState() and useEffect() to name a few. Additionally, I implemented front-end authentication through the power of API calls and tokens! Lastly, the useEffect() hook was used to authenticate all of the forms.
 
 An API from [weathermap.org](weathermap.org) was used for the application to get weather data from a specified longitude and latitude.
 
@@ -16,8 +26,28 @@ The application offers a user-friendly, aesthetically-pleasing user interface th
 
 ![ScreenshotOfWholeScreen](/src/images/WTWR-fullScreen.png)
 
-When the user clicks on the item card, a modal appears which highlights the card that was clicked through enlarging the respective card and centering the respective card on the middle of the page.
+When the user is logged off, the user will not see any cards. Rather, the user will only be able to see the current temperature of the specified city, the "log in" button, and the "sign up" button.
 
-![ScreenshotOfItemModal](/src/images/WTWR-itemModalOpen.png)
+![ScreenshotOfIncorrectlyFilledOutForm](/src/images/WTWR-invalidFormInput.png)
 
-When the user click on the text that says "+ New Clothes," the user is prompted to fill out a modal which lists and specifies all the required information to create a new garment card.
+When the user incorrectly fills out an input, the user will see the incorrectly filled out input turn red. Additionally, if the whole form is not completed correctly, the button to submit the form will be didabled and appear gray.
+
+![ScreenshotOfCorrectlyFilledOutForm](/src/images/WTWR-validFormInput.png)
+
+When the user correctly fills out the complete form, the submit button will be enabled and all inputs as well as the submit button will appear black.
+
+![ScreenshotOfCorrectlyFilledOutForm](/src/images/WTWR-signedInMainPage.png)
+
+When the user is logged in and on the main page, the user will see all of the cards created, the name of the current user, and the specified avatar of the user. The option to add a new card will be made available to the user. The current user may also like any cards the user wishes to like.
+
+![ScreenshotOfCorrectlyFilledOutForm](/src/images/WTWR-signedInProfilePage.png)
+
+When the user is logged in and on the profile page, the user will see all the cards created by the current user as well as the option to change the current user's profile data and log the current user off.
+
+![ScreenshotOfCorrectlyFilledOutForm](/src/images/WTWR-itemModalOpen.png)
+
+When the user clicks on any card, a modal will appear that will expand the clothing item and present the user with the name of the clothing item, the weather the clothing item's respective creator specified, and the delete button. Although everyone is presented with the "delete item" card, only the clothing item's respective creator is able to delete the card.
+
+### 'Backend'
+
+The GitHub repo for the backend is available: [https://github.com/propitive/se_project_express](here).

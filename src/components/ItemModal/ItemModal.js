@@ -1,9 +1,15 @@
 import React from "react";
 import "./ItemModal.css";
 
-function ItemModal({ card, onClose, onOpenDeleteModal }) {
+function ItemModal({ card, onClose, onOpenDeleteModal, onClick }) {
+  const handleCloseOnOverlayClick = (event) => {
+    if (event.target === event.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="item-modal__preview">
+    <div className="item-modal__preview" onClick={handleCloseOnOverlayClick}>
       <div className="item-modal__container">
         <button
           type="button"

@@ -1,12 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import ItemCard from "../ItemCard/ItemCard";
 import "./Main.css";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import { CurrentTemperatureUnitContext } from "../../context/CurrentTemperatureUnit";
+import {
+  getForecastWeather,
+  handleRetriveType,
+  handleRetrieveSunrise,
+  handleRetrieveSunset,
+} from "../../utils/weatherApi";
 
 function Main({ cards, weatherData, onCardClick, onCardLike }) {
   const actualWeather = weatherData.temperature;
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+  const [apiWeatherType, setApiWeatherType] = useState("sunny");
+  const [sunriseValue, setSunriseValue] = useState(0);
+  const [sunsetValue, setSunsetValue] = useState(0);
 
   const weatherType = () => {
     if (actualWeather >= 86) {
@@ -17,13 +26,45 @@ function Main({ cards, weatherData, onCardClick, onCardLike }) {
       return "cold";
     }
   };
-  console.log(cards);
+
   const filterCard = cards;
-  console.log(cards);
+
+  useEffect(() => {
+    getForecastWeather()
+      .then((data) => {
+        const weatherType = handleRetriveType(data);
+        const weatherTypeString = `${weatherType}`;
+        setApiWeatherType(weatherTypeString);
+
+        const sunrise = handleRetrieveSunrise(data);
+        const sunriseInSeconds = sunrise / 1000;
+        setSunriseValue(sunriseInSeconds);
+
+        const sunset = handleRetrieveSunset(data);
+        const sunsetInSeconds = sunset / 1000;
+        setSunsetValue(sunsetInSeconds);
+      })
+      .catch(console.error);
+  }, []);
 
   return (
     <main className="main">
-      <WeatherCard weatherData={weatherData} />
+      <WeatherCard
+        weatherData={weatherData}
+        day={
+          sunriseValue < Date.now() && Date.now() > sunsetValue ? true : false
+        }
+        type={
+          apiWeatherType !== "cloudy" ||
+          "fog" ||
+          "rain" ||
+          "snow" ||
+          "storm" ||
+          "sunny"
+            ? "sunny"
+            : "sunny"
+        }
+      />
       <section className="main__clothes">
         <div className="main__info">
           <div className="main__description-container">

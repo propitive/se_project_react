@@ -1,7 +1,9 @@
+import { latitude, longitude } from "./constants";
+
 const APIkey = "44d763e20353ebef92d497833d045a80";
 const getForecastWeather = async () => {
   const res = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=32.77&lon=-119.4432&appid=${APIkey}&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`
   );
   if (res.ok) {
     return res.json();
@@ -14,7 +16,9 @@ const filterDataFromWeatherApi = (data) => {
   if (!data) {
     return null;
   }
+
   const weather = {};
+
   weather.city = data.name;
   weather.temperature = data.main.temp;
   weather.condition = () => {
@@ -29,4 +33,28 @@ const filterDataFromWeatherApi = (data) => {
   return weather;
 };
 
-export { getForecastWeather, filterDataFromWeatherApi };
+function handleRetriveType(data) {
+  const weather = data.weather;
+  const weatherType = weather[0].main;
+  return weatherType;
+}
+
+function handleRetrieveSunrise(data) {
+  const sys = data.sys;
+  const sunrise = sys.sunrise;
+  return sunrise;
+}
+
+function handleRetrieveSunset(data) {
+  const sys = data.sys;
+  const sunset = sys.sunset;
+  return sunset;
+}
+
+export {
+  getForecastWeather,
+  filterDataFromWeatherApi,
+  handleRetriveType,
+  handleRetrieveSunrise,
+  handleRetrieveSunset,
+};

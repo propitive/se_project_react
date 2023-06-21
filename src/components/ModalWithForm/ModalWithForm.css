@@ -17,7 +17,7 @@
   width: 440px;
   border-radius: 20px;
   flex-direction: column;
-  font-family: "Cabinet-Grotesk";
+  font-family: "Space Grotesk";
   font-size: 16px;
   font-weight: bold;
   line-height: 20px;
@@ -29,7 +29,7 @@
 }
 
 .modal__title {
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -45,7 +45,7 @@
   color: #ffffff;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 4px;
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   bottom: 36px;
@@ -57,7 +57,7 @@
 }
 
 .modal__button-close {
-  background: url(../../images/close-button.png) center no-repeat;
+  background: url(../../images/close-button.svg) center no-repeat;
   height: 16px;
   width: 16px;
   border: none;
@@ -76,7 +76,7 @@
   font-size: 16px;
   line-height: 20px;
   width: 440px;
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -91,7 +91,7 @@
   font-size: 16px;
   line-height: 20px;
   width: 440px;
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -110,7 +110,7 @@
 }
 
 .register__label {
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -119,7 +119,7 @@
 }
 
 .register__input {
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -134,7 +134,7 @@
 .login__label {
   width: 440px;
   border: none;
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -144,13 +144,27 @@
   padding-top: 20px;
 }
 
+.login__label-invalid {
+  width: 440px;
+  border: none;
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  border-bottom: 20px;
+  padding-bottom: 9px;
+  padding-top: 20px;
+  color: red;
+}
+
 .login__input {
   width: 440px;
   left: 500px;
   top: 535px;
   border: none;
   border-bottom: 1px solid #000000;
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -159,10 +173,26 @@
   padding-top: 18px;
 }
 
+.login__input-invalid {
+  width: 440px;
+  left: 500px;
+  top: 535px;
+  border: none;
+  border-bottom: 1px solid red;
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  padding-bottom: 2px;
+  padding-top: 18px;
+  color: red;
+}
+
 .or__register {
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -175,7 +205,7 @@
 .or__log-in {
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -188,7 +218,7 @@
 .modal__input.modal__input_type_radio.hot {
   padding-top: 8px;
   padding-bottom: 8px;
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -199,7 +229,7 @@
 .modal__input.modal__input_type_radio.warm {
   padding-top: 8px;
   padding-bottom: 8px;
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -210,7 +240,7 @@
 .modal__input.modal__input_type_radio.cold {
   padding-top: 8px;
   padding-bottom: 30px;
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -225,7 +255,7 @@
 .edit-profile-modal__input-label {
   font-size: 14px;
   margin-bottom: 10px;
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;

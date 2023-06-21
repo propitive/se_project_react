@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-weight: 700;
   font-size: 20px;
   margin-top: 30px;
@@ -23,7 +23,7 @@
 }
 
 .header__date {
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-weight: 700;
   font-size: 20px;
   position: relative;

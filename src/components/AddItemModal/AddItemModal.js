@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { NewItemValidation } from "../../utils/validation";
+import {
+  NewItemValidation,
+  NewItemNameValidation,
+  NewItemLinkValidation,
+  NewItemWeatherType,
+} from "../../utils/validation";
 
 const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
   const [itemName, setItemName] = useState("");
   const [itemLink, setItemLink] = useState("");
   const [weatherType, setWeatherType] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
+  const [isNameValid, setIsNameValid] = useState(false);
+  const [isLinkValid, setIsLinkValid] = useState(false);
 
   useEffect(() => {
     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/gim.test(
@@ -16,6 +23,35 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
     );
     setIsFormValid(NewItemValidation(itemLink, itemName, weatherType));
   }, [itemLink, itemName, weatherType]);
+
+  useEffect(() => {
+    setIsNameValid(NewItemNameValidation(itemName));
+  }, [itemName]);
+
+  useEffect(() => {
+    setIsLinkValid(NewItemLinkValidation(itemLink));
+  }, [itemLink]);
+
+  useEffect(() => {
+    setIsNameValid(true);
+    setIsLinkValid(true);
+  }, []);
+
+  const nameLabelClassName = isNameValid
+    ? "login__label"
+    : "login__label-invalid";
+
+  const nameInputClassName = isNameValid
+    ? "login__input modal__input"
+    : "login__input-invalid modal__input";
+
+  const linkLabelClassName = isLinkValid
+    ? "login__label"
+    : "login__label-invalid";
+
+  const linkInputClassName = isLinkValid
+    ? "login__input modal__input"
+    : "login__input-invalid modal__input";
 
   function handleNameChange(event) {
     setItemName(event.target.value);
@@ -46,12 +82,12 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
       isValid={isFormValid}
       additionalClass="add-item-modal"
     >
-      <label className="modal__label">Name</label>
+      <label className={nameLabelClassName}>Name</label>
       <input
         type="text"
         name="name"
         id="name"
-        className="modal__input modal__input_type-name"
+        className={nameInputClassName}
         placeholder="Name"
         required
         minLength="1"
@@ -59,20 +95,19 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
         value={itemName}
         onChange={handleNameChange}
       />
-      <label className="modal__label">Image URL</label>
+      <label className={linkLabelClassName}>Image URL</label>
       <input
         type="url"
         name="link"
         id="link"
-        className="modal__input modal__input_type-url"
+        className={linkInputClassName}
         placeholder="Image URL"
         required
         value={itemLink}
         onChange={handleImageChange}
       />
-      <span className="modal__error" id="place-link-error"></span>
       <p>Select the weather type:</p>
-      <div className="modal__input modal__input_type_radio hot">
+      <div className={"modal__input modal__input_type_radio hot"}>
         <input
           type="radio"
           id="choiceHot"
@@ -86,7 +121,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
         </label>
       </div>
 
-      <div className="modal__input modal__input_type_radio warm">
+      <div className={"modal__input modal__input_type_radio warm"}>
         <input
           type="radio"
           id="choiceWarm"
@@ -99,7 +134,7 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
           Warm
         </label>
       </div>
-      <div className="modal__input modal__input_type_radio cold">
+      <div className={"modal__input modal__input_type_radio cold"}>
         <input
           type="radio"
           id="choiceCold"

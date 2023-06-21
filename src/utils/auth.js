@@ -1,7 +1,4 @@
-const BASE_URL =
-  process.env.NODE_ENV === "production"
-    ? "https://api.wtwr.crabdance.com"
-    : "http://localhost:3001";
+const BASE_URL = "http://localhost:3001";
 
 const handleResponse = (res) => {
   if (!res.ok) {

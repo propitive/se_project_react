@@ -10,12 +10,12 @@
   left: 507px;
   position: relative;
   cursor: pointer;
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 25px;
-  color: rgba(0, 0, 0, 0.6);
+  color: black;
 }
 
 .profile__title {
@@ -24,7 +24,7 @@
   left: 377px;
   top: 120px;
 
-  font-family: "Cabinet Grotesk";
+  font-family: "Space Grotesk";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
