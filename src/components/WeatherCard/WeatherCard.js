@@ -12,8 +12,6 @@ function WeatherCard({ weatherData, day, type }) {
   const weatherOption = weatherOptions.find(findWeather);
   const weatherOptionSrcUrl = weatherOption.url || "";
 
-  console.log(weatherOptionSrcUrl);
-
   return (
     <div className="weather">
       {weatherData && (

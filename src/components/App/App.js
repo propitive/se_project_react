@@ -46,13 +46,14 @@ const App = () => {
     Api.updateUserInfo(name, avatar, token)
       .then((res) => {
         closeAllModals();
-        setUser(res.data);
+        setUser(res);
       })
       .catch((err) => console.log(err))
       .finally(() => {
         setIsLoading(false);
       });
   };
+
   const handleEditProfileOpen = () => {
     setIsEditProfileModalOpen(true);
   };
@@ -125,8 +126,10 @@ const App = () => {
 
   const handleAddCardSubmit = (name, link, weather) => {
     Api.addCard({ name, imageUrl: link, weather, isLiked: false })
+
       .then((newCard) => {
-        setCards([...cards, newCard]);
+        debugger;
+        setCards([newCard, ...cards]);
         closeAllModals();
       })
       .catch((error) => {
@@ -157,6 +160,7 @@ const App = () => {
   const handleLike = (card) => {
     const { _id: id, isLiked } = card;
     const token = localStorage.getItem("token");
+    console.log(isLiked);
     if (isLiked) {
       Api.removeCardLike(id, token)
         .then((updatedCard) => {
@@ -207,7 +211,6 @@ const App = () => {
     if (token) {
       Api.getCards(token)
         .then(({ data }) => {
-          debugger;
           setCards(data);
         })
         .catch((error) => {

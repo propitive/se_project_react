@@ -5,6 +5,7 @@ import HeartNotLiked from "../../images/likeButton.svg";
 
 const ItemCard = ({ card, onCardClick, onCardLike }) => {
   const handleLikeClick = () => {
+    console.log(card);
     onCardLike(card);
   };
 
