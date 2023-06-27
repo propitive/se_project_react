@@ -1,7 +1,9 @@
 import React from "react";
 import "./ItemModal.css";
+import CurrentUserContext from "../../context/CurrentUserContext";
 
-function ItemModal({ card, onClose, onOpenDeleteModal, currentUser }) {
+function ItemModal({ card, onClose, onOpenDeleteModal }) {
+  const currentUser = React.useContext(CurrentUserContext);
   const isCardOwner = card.owner === currentUser._id ? true : false;
 
   const handleCloseOnOverlayClick = (event) => {

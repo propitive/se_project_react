@@ -249,7 +249,6 @@ const App = () => {
                     handleSetUserNull={handleSetUserNull}
                     handleEditProfileOpen={handleEditProfileOpen}
                     handleSignOut={handleSignOut}
-                    currentUser={currentUser}
                   />
                   <Route path="/">
                     <Main
@@ -257,7 +256,6 @@ const App = () => {
                       cards={cards}
                       onCardClick={onCardClick}
                       onCardLike={handleLike}
-                      currentUser={currentUser}
                     />
                   </Route>
                 </Switch>
@@ -274,7 +272,6 @@ const App = () => {
                     card={selectCard}
                     onClose={closeAllModals}
                     onOpenDeleteModal={openDeleteModal}
-                    currentUser={currentUser}
                   />
                 )}
                 {deleteModalOpen && (

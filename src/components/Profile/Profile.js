@@ -12,7 +12,6 @@ function Profile({
   onCardLike,
   handleSetUserNull,
   handleEditProfileOpen,
-  currentUser,
 }) {
   const history = useHistory();
 
@@ -41,7 +40,6 @@ function Profile({
           handleAddClick={handleAddClick}
           onCardClick={onCardClick}
           onCardLike={onCardLike}
-          currentUser={currentUser}
         />
       </div>
     </div>

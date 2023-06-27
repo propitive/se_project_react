@@ -84,7 +84,6 @@ function Main({ cards, weatherData, onCardClick, onCardLike, currentUser }) {
                 card={card}
                 onCardClick={onCardClick}
                 onCardLike={onCardLike}
-                currentUser={currentUser}
               />
             ))}
         </ul>
