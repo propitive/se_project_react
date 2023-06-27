@@ -79,6 +79,7 @@ function Main({ cards, weatherData, onCardClick, onCardLike }) {
           {Array.isArray(filterCard) &&
             filterCard.map((card, index) => (
               <ItemCard
+                // Key error
                 key={card._id}
                 card={card}
                 onCardClick={onCardClick}
@@ -92,3 +93,5 @@ function Main({ cards, weatherData, onCardClick, onCardLike }) {
 }
 
 export default Main;
+
+// Like function is not working

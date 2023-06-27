@@ -129,7 +129,7 @@ const App = () => {
 
       .then((newCard) => {
         debugger;
-        setCards([newCard, ...cards]);
+        setCards([newCard.data, ...cards]);
         closeAllModals();
       })
       .catch((error) => {
@@ -325,3 +325,5 @@ const App = () => {
   );
 };
 export default App;
+
+// Like function is not working

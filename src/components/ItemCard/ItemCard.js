@@ -41,3 +41,5 @@ const ItemCard = ({ card, onCardClick, onCardLike }) => {
 };
 
 export default ItemCard;
+
+// Like function is not working
