@@ -9,10 +9,12 @@ import {
   handleRetrieveSunrise,
   handleRetrieveSunset,
 } from "../../utils/weatherApi";
+import CurrentUserContext from "../../context/CurrentUserContext";
 
-function Main({ cards, weatherData, onCardClick, onCardLike, currentUser }) {
+function Main({ cards, weatherData, onCardClick, onCardLike }) {
   const actualWeather = weatherData.temperature;
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
+  const currentUser = React.useContext(CurrentUserContext);
   const [apiWeatherType, setApiWeatherType] = useState("sunny");
   const [sunriseValue, setSunriseValue] = useState(0);
   const [sunsetValue, setSunsetValue] = useState(0);
@@ -77,6 +79,7 @@ function Main({ cards, weatherData, onCardClick, onCardLike, currentUser }) {
         </div>
         <ul className="main__items">
           {Array.isArray(filterCard) &&
+            currentUser !== null &&
             filterCard.map((card, index) => (
               <ItemCard
                 // Key error

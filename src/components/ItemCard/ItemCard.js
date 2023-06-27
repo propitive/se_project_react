@@ -6,6 +6,7 @@ import CurrentUserContext from "../../context/CurrentUserContext";
 
 const ItemCard = ({ card, onCardClick, onCardLike }) => {
   const currentUser = React.useContext(CurrentUserContext);
+
   const isLiked = card.likes.some((card) => card === currentUser._id);
   const cardClassName = `card ${
     currentUser === null ? "card__invisible" : "card__visible"

@@ -1,6 +1,7 @@
 import React from "react";
 import ItemCard from "../ItemCard/ItemCard";
 import "./ClothesSection.css";
+import CurrentUserContext from "../../context/CurrentUserContext";
 
 const ClothesSection = ({
   cards = [],
@@ -8,6 +9,8 @@ const ClothesSection = ({
   onCardLike,
   handleAddClick,
 }) => {
+  const currentUser = React.useContext(CurrentUserContext);
+
   return (
     <div className="clothes-section">
       <div className="clothes-section__nav">
@@ -17,7 +20,19 @@ const ClothesSection = ({
         </p>
       </div>
       <div className="clothes-section-container">
-        {cards.map((card, index) => {
+        {currentUser !== null &&
+          cards.map((card, index) => {
+            return (
+              <ItemCard
+                key={index}
+                card={card}
+                onCardClick={onCardClick}
+                onCardLike={onCardLike}
+              />
+            );
+          })}
+
+        {/* {cards.map((card, index) => {
           return (
             <ItemCard
               key={index}
@@ -26,7 +41,7 @@ const ClothesSection = ({
               onCardLike={onCardLike}
             />
           );
-        })}
+        })} */}
       </div>
     </div>
   );
