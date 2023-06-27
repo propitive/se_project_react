@@ -31,17 +31,6 @@ const ClothesSection = ({
               />
             );
           })}
-
-        {/* {cards.map((card, index) => {
-          return (
-            <ItemCard
-              key={index}
-              card={card}
-              onCardClick={onCardClick}
-              onCardLike={onCardLike}
-            />
-          );
-        })} */}
       </div>
     </div>
   );

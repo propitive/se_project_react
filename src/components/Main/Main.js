@@ -82,7 +82,6 @@ function Main({ cards, weatherData, onCardClick, onCardLike }) {
             currentUser !== null &&
             filterCard.map((card, index) => (
               <ItemCard
-                // Key error
                 key={card._id}
                 card={card}
                 onCardClick={onCardClick}

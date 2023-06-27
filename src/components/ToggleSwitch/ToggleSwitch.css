@@ -26,6 +26,7 @@
   content: "";
   position: absolute;
   top: 50%;
+  left: -2%;
   width: 28px;
   height: 28px;
   margin-top: -14px;
@@ -90,5 +91,5 @@
 }
 
 .toggle-switch-input:checked ~ .toggle-switch-label .toggle-switch-inner {
-  left: calc(100% - 28px);
+  left: calc(100% - 27px);
 }
