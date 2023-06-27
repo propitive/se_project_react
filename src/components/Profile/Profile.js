@@ -12,9 +12,9 @@ function Profile({
   onCardLike,
   handleSetUserNull,
   handleEditProfileOpen,
+  currentUser,
 }) {
   const history = useHistory();
-  const currentUser = useContext(CurrentUserContext);
 
   const handleSignOut = () => {
     localStorage.removeItem("token");
@@ -33,7 +33,6 @@ function Profile({
     <div className="profile">
       <div className="profile-container">
         <SideBar
-          currentUser={currentUser}
           handleSignOut={handleSignOut}
           handleEditProfileOpen={handleEditProfileOpen}
         />
@@ -42,6 +41,7 @@ function Profile({
           handleAddClick={handleAddClick}
           onCardClick={onCardClick}
           onCardLike={onCardLike}
+          currentUser={currentUser}
         />
       </div>
     </div>

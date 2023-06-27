@@ -1,7 +1,9 @@
 import React from "react";
 import "./ItemModal.css";
 
-function ItemModal({ card, onClose, onOpenDeleteModal, onClick }) {
+function ItemModal({ card, onClose, onOpenDeleteModal, currentUser }) {
+  const isCardOwner = card.owner === currentUser._id ? true : false;
+
   const handleCloseOnOverlayClick = (event) => {
     if (event.target === event.currentTarget) {
       onClose();
@@ -27,13 +29,15 @@ function ItemModal({ card, onClose, onOpenDeleteModal, onClick }) {
 
             <p className="item-modal__weather">Weather: {card.weather}</p>
           </div>
-          <button
-            className="item-modal__delete"
-            onClick={onOpenDeleteModal}
-            type="button"
-          >
-            Delete item
-          </button>
+          {isCardOwner && (
+            <button
+              className="item-modal__delete"
+              onClick={onOpenDeleteModal}
+              type="button"
+            >
+              Delete item
+            </button>
+          )}
         </div>
       </div>
     </div>

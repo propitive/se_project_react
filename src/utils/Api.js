@@ -88,5 +88,3 @@ const Api = {
 };
 
 export default Api;
-
-// Like function is not working

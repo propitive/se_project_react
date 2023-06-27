@@ -22,6 +22,14 @@
   cursor: pointer;
 }
 
+.card__visible {
+  visibility: visible;
+}
+
+.card__invisible {
+  visibility: hidden;
+}
+
 .card__header {
   display: flex;
   flex-direction: row;
@@ -52,4 +60,12 @@
   border: none;
   width: 24px;
   height: 24px;
+}
+
+.card__like-button__visible {
+  visibility: visible;
+}
+
+.card__like-button__invisible {
+  visibility: hidden;
 }

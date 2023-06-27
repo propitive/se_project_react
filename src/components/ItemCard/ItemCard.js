@@ -5,15 +5,15 @@ import HeartNotLiked from "../../images/likeButton.svg";
 
 const ItemCard = ({ card, onCardClick, onCardLike, currentUser }) => {
   const isLiked = card.likes.some((card) => card === currentUser._id);
-  const likeButtonClassName = `card__like-button ${
-    isLiked ? "card__like-button_filled" : ""
+  const cardClassName = `card ${
+    currentUser === null ? "card__invisible" : "card__visible"
   }`;
 
   const renderNotLiked = () => {
     return (
       <button
         onClick={() => onCardLike(card, isLiked)}
-        className={likeButtonClassName}
+        className="card__like-button"
       >
         <img src={HeartLiked} alt="This item has been liked" />
       </button>
@@ -24,51 +24,18 @@ const ItemCard = ({ card, onCardClick, onCardLike, currentUser }) => {
     return (
       <button
         onClick={() => onCardLike(card, isLiked)}
-        className={likeButtonClassName}
+        className="card__like-button"
       >
         <img src={HeartNotLiked} alt="This item has not been liked" />
       </button>
     );
   };
 
-  // const handleLikeClick = () => {
-  //   console.log(card);
-  //   onCardLike(card);
-  // };
-
   return (
-    // <div className="card">
-    //   <div className="card__header">
-    //     <div className="card__name">{card.name}</div>
-    //     <button
-    //       className={`card__like-button ${
-    //         card.isLiked ? "card__like-button_filled" : ""
-    //       }`}
-    //       onClick={handleLikeClick(card, isLiked)}
-    //       style={{ background: "none" }}
-    //     >
-    //       {card.isLiked ? (
-    //         <img src={HeartLiked} alt="Heart Liked" />
-    //       ) : (
-    //         <img src={HeartNotLiked} alt="Heart Not Liked" />
-    //       )}
-    //     </button>
-    //   </div>
-
-    //   <img
-    //     className="card__image"
-    //     src={card.imageUrl || card.link}
-    //     alt={card.name}
-    //     onClick={() => {
-    //       onCardClick(card);
-    //     }}
-    //   />
-    // </div>
-
-    <div className="card">
+    <div className={cardClassName}>
       <div className="card__header">
         <div className="card__name">{card.name}</div>
-        {isLiked ? renderLiked() : renderNotLiked()}
+        {isLiked ? renderNotLiked() : renderLiked()}
       </div>
 
       <img
@@ -84,5 +51,3 @@ const ItemCard = ({ card, onCardClick, onCardLike, currentUser }) => {
 };
 
 export default ItemCard;
-
-// Like function is not working

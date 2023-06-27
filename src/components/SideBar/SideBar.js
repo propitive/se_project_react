@@ -11,8 +11,6 @@ function SideBar({ handleSignOut, handleEditProfileOpen }) {
     history.push("/");
   };
 
-  console.log("This is current user -->" + currentUser);
-
   return (
     <div className="side-bar">
       <div className="side-bar__container">

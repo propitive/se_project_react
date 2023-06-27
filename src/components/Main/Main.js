@@ -94,5 +94,3 @@ function Main({ cards, weatherData, onCardClick, onCardLike, currentUser }) {
 }
 
 export default Main;
-
-// Like function is not working

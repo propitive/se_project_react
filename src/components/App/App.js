@@ -128,7 +128,6 @@ const App = () => {
     Api.addCard({ name, imageUrl: link, weather })
 
       .then((newCard) => {
-        debugger;
         setCards([newCard.data, ...cards]);
         closeAllModals();
       })
@@ -160,24 +159,6 @@ const App = () => {
   const handleLike = (card, isLiked) => {
     const { _id: id } = card;
     const token = localStorage.getItem("token");
-    console.log(isLiked);
-    // if (isLiked) {
-    //   Api.removeCardLike({ _id }, token)
-    //     .then((updatedCard) => {
-    //       setCards((cards) =>
-    //         cards.map((c) => (c._id === _id ? updatedCard.data : c))
-    //       );
-    //     })
-    //     .catch((err) => console.log(err));
-    // } else {
-    //   Api.addCardLike({ _id }, token)
-    //     .then((updatedCard) => {
-    //       setCards((cards) =>
-    //         cards.map((c) => (c._id === _id ? updatedCard.data : c))
-    //       );
-    //     })
-    //     .catch((err) => console.log(err));
-    // }
 
     isLiked
       ? Api.removeCardLike(id, token)
@@ -293,6 +274,7 @@ const App = () => {
                     card={selectCard}
                     onClose={closeAllModals}
                     onOpenDeleteModal={openDeleteModal}
+                    currentUser={currentUser}
                   />
                 )}
                 {deleteModalOpen && (
@@ -343,5 +325,3 @@ const App = () => {
   );
 };
 export default App;
-
-// Like function is not working
