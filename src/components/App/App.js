@@ -125,7 +125,7 @@ const App = () => {
   };
 
   const handleAddCardSubmit = (name, link, weather) => {
-    Api.addCard({ name, imageUrl: link, weather, isLiked: false })
+    Api.addCard({ name, imageUrl: link, weather })
 
       .then((newCard) => {
         debugger;
@@ -157,27 +157,43 @@ const App = () => {
       });
   };
 
-  const handleLike = (card) => {
-    const { _id: id, isLiked } = card;
+  const handleLike = (card, isLiked) => {
+    const { _id: id } = card;
     const token = localStorage.getItem("token");
     console.log(isLiked);
-    if (isLiked) {
-      Api.removeCardLike(id, token)
-        .then((updatedCard) => {
-          setCards((cards) =>
-            cards.map((c) => (c._id === id ? updatedCard.data : c))
-          );
-        })
-        .catch((err) => console.log(err));
-    } else {
-      Api.addCardLike(id, token)
-        .then((updatedCard) => {
-          setCards((cards) =>
-            cards.map((c) => (c._id === id ? updatedCard.data : c))
-          );
-        })
-        .catch((err) => console.log(err));
-    }
+    // if (isLiked) {
+    //   Api.removeCardLike({ _id }, token)
+    //     .then((updatedCard) => {
+    //       setCards((cards) =>
+    //         cards.map((c) => (c._id === _id ? updatedCard.data : c))
+    //       );
+    //     })
+    //     .catch((err) => console.log(err));
+    // } else {
+    //   Api.addCardLike({ _id }, token)
+    //     .then((updatedCard) => {
+    //       setCards((cards) =>
+    //         cards.map((c) => (c._id === _id ? updatedCard.data : c))
+    //       );
+    //     })
+    //     .catch((err) => console.log(err));
+    // }
+
+    isLiked
+      ? Api.removeCardLike(id, token)
+          .then((updatedCard) => {
+            setCards((cards) =>
+              cards.map((c) => (c._id === id ? updatedCard.data : c))
+            );
+          })
+          .catch((err) => console.log(err))
+      : Api.addCardLike(id, token)
+          .then((updatedCard) => {
+            setCards((cards) =>
+              cards.map((c) => (c._id === id ? updatedCard.data : c))
+            );
+          })
+          .catch((err) => console.log(err));
   };
 
   const openDeleteModal = () => {
@@ -252,6 +268,7 @@ const App = () => {
                     handleSetUserNull={handleSetUserNull}
                     handleEditProfileOpen={handleEditProfileOpen}
                     handleSignOut={handleSignOut}
+                    currentUser={currentUser}
                   />
                   <Route path="/">
                     <Main
@@ -259,6 +276,7 @@ const App = () => {
                       cards={cards}
                       onCardClick={onCardClick}
                       onCardLike={handleLike}
+                      currentUser={currentUser}
                     />
                   </Route>
                 </Switch>

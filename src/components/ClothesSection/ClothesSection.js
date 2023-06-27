@@ -7,6 +7,7 @@ const ClothesSection = ({
   onCardClick,
   onCardLike,
   handleAddClick,
+  currentUser,
 }) => {
   return (
     <div className="clothes-section">
@@ -24,6 +25,7 @@ const ClothesSection = ({
               card={card}
               onCardClick={onCardClick}
               onCardLike={onCardLike}
+              currentUser={currentUser}
             />
           );
         })}

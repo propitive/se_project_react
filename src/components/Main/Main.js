@@ -10,7 +10,7 @@ import {
   handleRetrieveSunset,
 } from "../../utils/weatherApi";
 
-function Main({ cards, weatherData, onCardClick, onCardLike }) {
+function Main({ cards, weatherData, onCardClick, onCardLike, currentUser }) {
   const actualWeather = weatherData.temperature;
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const [apiWeatherType, setApiWeatherType] = useState("sunny");
@@ -84,6 +84,7 @@ function Main({ cards, weatherData, onCardClick, onCardLike }) {
                 card={card}
                 onCardClick={onCardClick}
                 onCardLike={onCardLike}
+                currentUser={currentUser}
               />
             ))}
         </ul>
