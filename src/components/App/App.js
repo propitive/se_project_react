@@ -110,6 +110,7 @@ const App = () => {
     signUp(name, avatar, email, password)
       .then((res) => {
         handleLogin({ email, password });
+        console.log(res);
       })
       .catch((error) => {
         console.log(error);
