@@ -1,4 +1,4 @@
-# SE_Project_React
+# What To Wear
 
 ### `Domain`
 
