@@ -71,7 +71,7 @@ When the user is logged in and on the profile page, the user will see all the ca
 
 ![ScreenshotOfItemModalOpen](/src/images/WTWR-itemModalOpen.png)
 
-When the user clicks on any card, a modal will appear that will expand the clothing item and present the user with the name of the clothing item, the weather the clothing item's respective creator specified, and the delete button. Although everyone is presented with the "delete item" card, only the clothing item's respective creator is able to delete the card.
+When the user clicks on any card, a modal will appear that will expand the clothing item and present the user with the name of the clothing item, the weather the clothing item's respective creator specified, and the delete button. Only the clothing item's respective creator is able to delete the card.
 
 ### Backend
 
