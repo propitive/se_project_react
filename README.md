@@ -33,7 +33,7 @@ After you clone this repo to your desktop, go to its root directory and run `npm
 
 Once the dependencies are installed, you can run `npm start` to start the application. You will then be able to access it at localhost:3000.
 
-### Screenshots
+## Screenshots
 
 The application offers a user-friendly, aesthetically-pleasing user interface that makes it easy for anyone to "pick up" my app and maneuver their way throughout the application.
 
