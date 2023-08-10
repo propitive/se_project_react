@@ -1,33 +1,41 @@
 # What To Wear!
 
-### `Domain`
+This is a node.js news application powered by Express that suggests clothing items created and by the user!
+![ScreenshotOfSignedInMainPage](/src/images/WTWR-signedInMainPage.png)
+
+### Domain
 
 - Front end: [https://sweaterweather.umhl.com/](https://sweaterweather.umhl.com/)
 - Back end: [https://api.sweaterweather.umhl.com/](https://api.sweaterweather.umhl.com/)
 
-### `Decription`
+## General info
 
-Using the technologies and functionalities exclusive to React, I created an application where a user can view the current temperature of a specfied city and create an account in which they can create clothing items.
+This project allows for users to create clothing items categorized by the weather that the clothing item is best worn in. Thereafter, based on read weather data from a Weather API, the application will recommend suitable clothing to the user. 
 
-When the user is logged in, more functionality is permitted to the user:
+## Technologies
 
-- The user is able to create clothing items
-- The user is able to access all clothing items
-- The user is able to "like" the cards the respective user has created
-- The user is able to update the respective user's name and avatar
-- The user is able to log off
+Project is created with:
 
-With the specified ideal weather to wear a piece of clothing in (provided by the user), the application is able to display the pieces of clothing ideal to wear in respect to the weather of the specified city.
+- React: 18.2.0
+- Node.js: 18.15.0
+- Express: 4.18.2
 
-### `Technologies and Techniques`
+### Features
 
-Contrary to the technologies I used on my last project, this project I used hooks available to developers using React. I used useState() and useEffect() to name a few. Additionally, I implemented front-end authentication through the power of API calls and tokens! Lastly, the useEffect() hook was used to authenticate all of the forms.
+- Create, like, and retrieve clothing items
+- Create an account that can later be modified 
+- Toggle the scale of temperature from celsius to fahrenheit
+- Weather card background updates based on weather conditions
 
-An API from [weathermap.org](weathermap.org) was used for the application to get weather data from a specified longitude and latitude.
+## Usage
 
-### `Screenshots`
+After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
 
-The application offers a user-friendly, aesthetically-pleasing user interface that makes it easy for anyone to "pick up" my app and maneuver their way throughout the application,
+Once the dependencies are installed, you can run `npm start` to start the application. You will then be able to access it at localhost:3000.
+
+### Screenshots
+
+The application offers a user-friendly, aesthetically-pleasing user interface that makes it easy for anyone to "pick up" my app and maneuver their way throughout the application.
 
 #### 'Not Signed In'
 
