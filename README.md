@@ -10,7 +10,7 @@ This is a node.js clothes application powered by Express that suggests clothing 
 
 ## General info
 
-This project allows for users to create clothing items categorized by the weather that the clothing item is best worn in. Thereafter, based on read weather data from a Weather API, the application will recommend suitable clothing to the user. 
+This project allows for users to create clothing items categorized by the weather that the clothing item is best worn in. Thereafter, based on read weather data from [a Weather API](https://openweathermap.org/api), the application will recommend suitable clothing to the user. 
 
 ## Technologies
 
