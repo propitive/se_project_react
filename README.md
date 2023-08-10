@@ -1,6 +1,6 @@
 # What To Wear!
 
-This is a node.js news application powered by Express that suggests clothing items created by the user!
+This is a node.js clothes application powered by Express that suggests clothing items created by the user!
 ![ScreenshotOfSignedInMainPage](/src/images/WTWR-signedInMainPage.png)
 
 ### Domain
