@@ -69,7 +69,7 @@ const Header = ({
 
           {currentUser ? (
             <>
-              <>
+              <div className="header__container">
                 <button onClick={handleAddClick} className="navigation__button">
                   + Add clothes
                 </button>
@@ -97,7 +97,7 @@ const Header = ({
                     Sign out
                   </button>
                 )}
-              </>
+              </div>
               <div className="menu__container">
                 <div className="navbar">
                   <Link
