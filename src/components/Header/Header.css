@@ -8,6 +8,14 @@
   margin-top: 30px;
 }
 
+.header__whole-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 .header__container {
   display: flex;
   align-items: center;
@@ -38,4 +46,12 @@
   position: relative;
   align-content: flex-start;
   left: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .header__whole-container {
+    display: none;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
