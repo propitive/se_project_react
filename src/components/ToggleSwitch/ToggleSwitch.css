@@ -18,6 +18,7 @@
   cursor: pointer;
   border-radius: 50px;
   background-color: #fff;
+  /* background-color: red; */
   position: relative;
   transition: background-color 0.3s ease-in-out;
 }
@@ -26,12 +27,14 @@
   content: "";
   position: absolute;
   top: 50%;
-  left: -2%;
+  /* left: -2%; */
+  left: -29%;
   width: 28px;
   height: 28px;
   margin-top: -14px;
   background-color: #000;
   color: #fff;
+  /* color: green; */
   text-align: center;
   line-height: 38px;
   border-radius: 50%;
@@ -91,5 +94,5 @@
 }
 
 .toggle-switch-input:checked ~ .toggle-switch-label .toggle-switch-inner {
-  left: calc(100% - 27px);
+  left: calc(100% - 44px);
 }

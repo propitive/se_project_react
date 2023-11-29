@@ -57,19 +57,19 @@ const Header = ({
   return (
     city && (
       <header className="header">
-        <div className="header__container">
-          <Link to="/">
-            <img src={headerLogo} alt="wtwr logo" className="header__logo" />
-          </Link>
-          <p className="header__date">{`${currentDate}, ${city}`}</p>
-        </div>
+        <div className="header__whole-container">
+          <div className="header__container">
+            <Link to="/">
+              <img src={headerLogo} alt="wtwr logo" className="header__logo" />
+            </Link>
+            <p className="header__date">{`${currentDate}, ${city}`}</p>
+          </div>
 
-        <div className="header__nav">
-          <ToggleSwitch isChecked={isToggleOn} onToggle={handleToggle} />
+          <div className="header__nav">
+            <ToggleSwitch isChecked={isToggleOn} onToggle={handleToggle} />
 
-          {currentUser ? (
-            <>
-              <div className="header__container">
+            {currentUser ? (
+              <>
                 <button onClick={handleAddClick} className="navigation__button">
                   + Add clothes
                 </button>
@@ -97,42 +97,54 @@ const Header = ({
                     Sign out
                   </button>
                 )}
-              </div>
-              <div className="menu__container">
-                <div className="navbar">
-                  <Link
-                    to="/"
-                    style={{ textDecoration: "none", alignSelf: "center" }}
-                  >
-                    <img className="header__logo" src={headerLogo} />
-                  </Link>
-                  <Link to="#" className="menu-bars">
-                    <FaIcons.FaBars
-                      style={{
-                        color: "white",
-                      }}
-                      onClick={showSidebar}
-                    />
-                  </Link>
-                </div>
-                <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-                  <div
-                    className={`nav-menu__backdrop ${
-                      sidebar ? "nav-menu__backdrop__open" : ""
-                    }`}
-                    onClick={handleCloseOnOverlayClick}
-                  ></div>
-                  <ul className="nav-menu-items">
-                    <li className="navbar-toggle">
-                      <Link to="#" className="menu-bars" onClick={showSidebar}>
-                        <AiIcons.AiOutlineClose
-                          style={{
-                            color: "white",
-                          }}
-                        />
-                      </Link>
-                    </li>
-                    {/* {SidebarData.map((item, index) => {
+              </>
+            ) : (
+              <>
+                <span className="navigation__link" onClick={openLoginModal}>
+                  Log in
+                </span>
+                <span className="navigation__link" onClick={openRegisterModal}>
+                  Sign up
+                </span>
+              </>
+            )}
+          </div>
+        </div>
+        <div className="menu__container">
+          <div className="navbar">
+            <Link
+              to="/"
+              style={{ textDecoration: "none", alignSelf: "center" }}
+            >
+              <img className="header__logo" src={headerLogo} />
+            </Link>
+            <Link to="#" className="menu-bars">
+              <FaIcons.FaBars
+                style={{
+                  color: "white",
+                }}
+                onClick={showSidebar}
+              />
+            </Link>
+          </div>
+          <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+            <div
+              className={`nav-menu__backdrop ${
+                sidebar ? "nav-menu__backdrop__open" : ""
+              }`}
+              onClick={handleCloseOnOverlayClick}
+            ></div>
+            <ul className="nav-menu-items">
+              <li className="navbar-toggle">
+                <Link to="#" className="menu-bars" onClick={showSidebar}>
+                  <AiIcons.AiOutlineClose
+                    style={{
+                      color: "white",
+                    }}
+                  />
+                </Link>
+              </li>
+              {/* {SidebarData.map((item, index) => {
                       return (
                         <li key={index} className={item.cName}>
                           <Link to={item.path}>
@@ -141,21 +153,9 @@ const Header = ({
                         </li>
                       );
                     })} */}
-                    {/* <BookOnlineButton className=" nav-menu__button" /> */}
-                  </ul>
-                </nav>
-              </div>
-            </>
-          ) : (
-            <>
-              <span className="navigation__link" onClick={openLoginModal}>
-                Log in
-              </span>
-              <span className="navigation__link" onClick={openRegisterModal}>
-                Sign up
-              </span>
-            </>
-          )}
+              {/* <BookOnlineButton className=" nav-menu__button" /> */}
+            </ul>
+          </nav>
         </div>
       </header>
     )
