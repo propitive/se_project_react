@@ -273,3 +273,51 @@
   padding: 3px 0;
   margin-bottom: 20px;
 }
+
+@media screen and (max-width: 550px) {
+  .modal__form {
+    width: 380px;
+  }
+  .login__label {
+    width: 380px;
+  }
+  .login__input {
+    width: 380px;
+  }
+  .register__input {
+    width: 380px;
+  }
+  .or__log-in {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .modal__form {
+    width: 320px;
+  }
+  .login__label {
+    width: 320px;
+  }
+  .login__input {
+    width: 320px;
+  }
+  .register__input {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .modal__form {
+    width: 280px;
+  }
+  .login__label {
+    width: 280px;
+  }
+  .login__input {
+    width: 280px;
+  }
+  .register__input {
+    width: 280px;
+  }
+}
