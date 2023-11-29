@@ -9,3 +9,9 @@
   margin: 0 auto;
   max-width: calc(100% - 80px);
 }
+
+@media screen and (max-width: 700px) {
+  .page__wrapper {
+    max-width: calc(100% - 40px);
+  }
+}

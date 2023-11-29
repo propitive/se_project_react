@@ -2,7 +2,7 @@
   display: none;
   visibility: hidden;
   pointer-events: none;
-  height: 105px;
+  height: 66px;
 }
 
 .navbar {
@@ -117,7 +117,6 @@ span {
     display: block;
     visibility: visible;
     pointer-events: all;
-    height: 90px;
     width: 100%;
   }
   .header__logo {

@@ -54,4 +54,10 @@
     visibility: hidden;
     pointer-events: none;
   }
+  .header__logo {
+    left: 0px;
+  }
+}
+
+@media screen and (max-width: 700px) {
 }
