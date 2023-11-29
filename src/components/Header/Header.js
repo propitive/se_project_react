@@ -121,7 +121,7 @@ const Header = ({
             <Link to="#" className="menu-bars">
               <FaIcons.FaBars
                 style={{
-                  color: "white",
+                  color: "black",
                 }}
                 onClick={showSidebar}
               />
