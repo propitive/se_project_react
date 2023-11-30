@@ -1,3 +1,7 @@
+.toggle-switch__container {
+  display: flex;
+}
+
 .toggle-switch {
   position: relative;
   display: inline-block;
@@ -5,6 +9,7 @@
   height: 28px;
   border: 2px solid #7e7e7e;
   border-radius: 20px;
+  margin: 0 auto 0;
 }
 
 .toggle-switch-input {

@@ -144,6 +144,12 @@ const Header = ({
                   />
                 </Link>
               </li>
+              <li onClick={handleAddClick} className="nav-text">
+                <span>+ Add Clothes</span>
+              </li>
+              <div className="toggle-switch__container">
+                <ToggleSwitch isChecked={isToggleOn} onToggle={handleToggle} />
+              </div>
               {/* {SidebarData.map((item, index) => {
                       return (
                         <li key={index} className={item.cName}>
