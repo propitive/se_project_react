@@ -1,6 +1,6 @@
 .card__image {
-  height: 228px;
-  width: 228px;
+  height: 250px;
+  width: 250px;
   object-fit: cover;
   object-position: center;
 }
@@ -33,6 +33,7 @@
 .card__header {
   display: flex;
   flex-direction: row;
+  gap: 10px;
 }
 
 .card__name {
@@ -53,6 +54,14 @@
   border: none;
   width: 24px;
   height: 24px;
+  padding: 0;
+  margin: auto;
+  background: transparent;
+}
+
+.card__like-button-image {
+  width: 24px;
+  height: 24px;
 }
 
 .card__like-button_filled {
@@ -68,4 +77,66 @@
 
 .card__like-button__invisible {
   visibility: hidden;
+}
+
+@media screen and (max-width: 1101px) {
+  .card {
+    /* background-color: blue; */
+    width: 300px;
+    height: 300px;
+  }
+  .card__image {
+    height: 235px;
+    width: 235px;
+  }
+  .card__name {
+    font-size: 14px;
+  }
+  .card__like-button {
+    width: 20px;
+    height: 20px;
+  }
+  .card__like-button-image {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 1018px) {
+  .card {
+    /* background-color: green; */
+    width: 250px;
+    height: 250px;
+  }
+  .card__image {
+    height: 200px;
+    width: 200px;
+  }
+  .card__name {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 868px) {
+  .card {
+    /* background-color: pink; */
+    width: 200px;
+    height: 200px;
+  }
+  .card__image {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .card {
+    /* background-color: purple; */
+    width: 150px;
+    height: 150px;
+  }
+  .card__image {
+    height: 110px;
+    width: 110px;
+  }
 }

@@ -18,7 +18,11 @@ const ItemCard = ({ card, onCardClick, onCardLike }) => {
         onClick={() => onCardLike(card, isLiked)}
         className="card__like-button"
       >
-        <img src={HeartLiked} alt="This item has been liked" />
+        <img
+          className="card__like-button-image"
+          src={HeartLiked}
+          alt="This item has been liked"
+        />
       </button>
     );
   };
@@ -29,7 +33,11 @@ const ItemCard = ({ card, onCardClick, onCardLike }) => {
         onClick={() => onCardLike(card, isLiked)}
         className="card__like-button"
       >
-        <img src={HeartNotLiked} alt="This item has not been liked" />
+        <img
+          className="card__like-button-image"
+          src={HeartNotLiked}
+          alt="This item has not been liked"
+        />
       </button>
     );
   };
