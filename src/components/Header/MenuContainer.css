@@ -13,6 +13,15 @@
   align-items: center;
 }
 
+.navbar__logo-date {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar__date {
+  margin: auto 0px auto 15px;
+}
+
 .menu-bars {
   margin: 0;
   font-size: 2rem;
@@ -126,14 +135,26 @@ span {
   }
 }
 
+@media screen and (max-width: 800px) {
+  .navbar__date {
+    font-size: 18px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .nav-text {
     height: 50px;
+  }
+  .navbar__date {
+    font-size: 15px;
   }
 }
 
 @media screen and (max-width: 400px) {
   .nav-text {
     height: 40px;
+  }
+  .navbar__date {
+    margin: auto 0px auto 10px;
   }
 }

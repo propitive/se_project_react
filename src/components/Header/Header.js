@@ -112,12 +112,15 @@ const Header = ({
         </div>
         <div className="menu__container">
           <div className="navbar">
-            <Link
-              to="/"
-              style={{ textDecoration: "none", alignSelf: "center" }}
-            >
-              <img className="header__logo" src={headerLogo} />
-            </Link>
+            <div className="navbar__logo-date">
+              <Link
+                to="/"
+                style={{ textDecoration: "none", alignSelf: "center" }}
+              >
+                <img className="header__logo" src={headerLogo} />
+              </Link>
+              <p className="navbar__date">{`${currentDate}, ${city}`}</p>
+            </div>
             <Link to="#" className="menu-bars">
               <FaIcons.FaBars
                 style={{
