@@ -149,9 +149,60 @@ const Header = ({
                   />
                 </Link>
               </li>
-              <li onClick={handleAddClick} className="nav-text">
-                <span>+ Add Clothes</span>
-              </li>
+              {currentUser ? (
+                <>
+                  <div className="nav-menu__profile-section">
+                    <Link to="/profile">
+                      {currentUser.avatar ? (
+                        <img
+                          className="navigation__user"
+                          src={currentUser.avatar}
+                          alt="user avatar"
+                        />
+                      ) : (
+                        <button className="navigation__default">
+                          {currentUser.name.charAt(0).toUpperCase()}
+                        </button>
+                      )}
+                    </Link>
+                    <span className="nav-menu__username">
+                      {currentUser.name || username}
+                    </span>
+                  </div>
+                  <li onClick={handleAddClick} className="nav-text">
+                    <span>+ Add Clothes</span>
+                  </li>
+                  {!isMainPage && !isProfilePage && (
+                    // <button
+                    //   onClick={handleSignOut}
+                    //   className="navigation__button"
+                    // >
+                    //   Sign out
+                    // </button>
+                    <li onClick={handleSignOut} className="nav-text">
+                      <span>Sign out</span>
+                    </li>
+                  )}
+                </>
+              ) : (
+                <>
+                  {/* <span className="navigation__link" onClick={openLoginModal}>
+                    Log in
+                  </span> */}
+                  <li onClick={openLoginModal} className="nav-text">
+                    <span> Log in</span>
+                  </li>
+                  {/* <span
+                    className="navigation__link"
+                    onClick={openRegisterModal}
+                  >
+                    Sign up
+                  </span> */}
+                  <li onClick={openRegisterModal} className="nav-text">
+                    <span>Sign up</span>
+                  </li>
+                </>
+              )}
               <div className="toggle-switch__container">
                 <ToggleSwitch isChecked={isToggleOn} onToggle={handleToggle} />
               </div>

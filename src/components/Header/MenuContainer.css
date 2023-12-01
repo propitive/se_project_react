@@ -22,6 +22,22 @@
   margin: auto 0px auto 15px;
 }
 
+.nav-menu__profile-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 40px;
+  color: white;
+}
+
+.nav-menu__username {
+  font-family: "Space Grotesk";
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  margin: 0;
+}
+
 .menu-bars {
   margin: 0;
   font-size: 2rem;
