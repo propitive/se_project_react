@@ -45,56 +45,123 @@
   color: rgba(0, 0, 0, 0.6);
 }
 
-@media screen and (max-width: 1391px) {
-  .card-cs {
-    background-color: blue;
-    width: 300px;
-    height: 300px;
-  }
-  .card-cs__image {
-    height: 235px;
-    width: 235px;
-  }
-  .card-cs__name {
-    font-size: 14px;
-  }
+.card-cs__like-button {
+  cursor: pointer;
+  border: none;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: auto;
+  background: transparent;
 }
 
-@media screen and (max-width: 1308px) {
+.card-cs__like-button-image {
+  width: 24px;
+  height: 24px;
+}
+
+/* @media screen and (max-width: 1000px) {
   .card-cs {
     background-color: green;
-    width: 270px;
-    height: 270px;
+    width: 290px;
+    height: 290px;
   }
   .card-cs__image {
-    height: 210px;
-    width: 210px;
+    height: 200px;
+    width: 200px;
   }
-}
+  .card-cs__name {
+    font-size: 12px;
+  }
+  .card-cs__header {
+    height: 20px;
+  }
+  .card-cs__like-button {
+    width: 20px;
+    height: 20px;
+  }
+  .card-cs__like-button-image {
+    width: 20px;
+    height: 20px;
+  }
+} */
 
-@media screen and (max-width: 1230px) {
+@media screen and (max-width: 1000px) {
   .card-cs {
     background-color: pink;
-    width: 240px;
-    height: 240px;
+    width: 260px;
+    height: 260px;
   }
   .card-cs__image {
     height: 180px;
     width: 180px;
   }
   .card-cs__name {
-    font-size: 12px;
+    font-size: 11px;
+  }
+  .card-cs__like-button {
+    width: 20px;
+    height: 20px;
+  }
+  .card-cs__like-button-image {
+    width: 20px;
+    height: 20px;
+  }
+  .card-cs__name {
+    height: 20px;
   }
 }
 
-@media screen and (max-width: 1130px) {
+@media screen and (max-width: 915px) {
   .card-cs {
     background-color: purple;
-    width: 197px;
-    height: 197px;
+    width: 220px;
+    height: 220px;
   }
   .card-cs__image {
-    height: 140px;
+    height: 150px;
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 795px) {
+  .card-cs {
+    background-color: orange;
+    width: 191px;
+    height: 191px;
+  }
+  .card-cs__image {
+    height: 130px;
     width: 140px;
+  }
+  .card-cs__name {
+    height: 18px;
+  }
+}
+
+@media screen and (max-width: 711px) {
+  .card-cs {
+    background-color: red;
+    width: 170px;
+    height: 170px;
+  }
+  .card-cs__image {
+    height: 110px;
+    width: 110px;
+  }
+  .card-cs__name {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 588px) {
+  .card-cs {
+    background-color: blueviolet;
+    width: 150px;
+    height: 150px;
+  }
+  .card-cs__image {
+    height: 110px;
+    width: 110px;
   }
 }

@@ -35,10 +35,45 @@
   display: flex;
   flex-wrap: wrap;
   gap: 17px 17px;
+  width: 100%;
+  margin: 0 auto 0;
 }
 
 @media screen and (max-width: 1000px) {
   .clothes-section {
     margin: 0;
+  }
+  .clothes-section-container {
+    max-width: 818px;
+  }
+}
+
+@media screen and (max-width: 915px) {
+  .clothes-section-container {
+    max-width: 698px;
+  }
+}
+
+@media screen and (max-width: 795px) {
+  .clothes-section-container {
+    max-width: 614px;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .clothes-section-container {
+    max-width: 548px;
+  }
+}
+
+@media screen and (max-width: 588px) {
+  .clothes-section-container {
+    max-width: 490px;
+  }
+}
+
+@media screen and (max-width: 528px) {
+  .clothes-section-container {
+    max-width: 322px;
   }
 }

@@ -16,10 +16,10 @@ const ItemCardClothesSection = ({ card, onCardClick, onCardLike }) => {
     return (
       <button
         onClick={() => onCardLike(card, isLiked)}
-        className="card__like-button"
+        className="card-cs__like-button"
       >
         <img
-          className="card__like-button-image"
+          className="card-cs__like-button-image"
           src={HeartLiked}
           alt="This item has been liked"
         />
@@ -31,10 +31,10 @@ const ItemCardClothesSection = ({ card, onCardClick, onCardLike }) => {
     return (
       <button
         onClick={() => onCardLike(card, isLiked)}
-        className="card__like-button"
+        className="card-cs__like-button"
       >
         <img
-          className="card__like-button-image"
+          className="card-cs__like-button-image"
           src={HeartNotLiked}
           alt="This item has not been liked"
         />

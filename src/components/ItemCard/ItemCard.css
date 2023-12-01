@@ -104,7 +104,7 @@
 
 @media screen and (max-width: 1119px) {
   .card {
-    background-color: green;
+    /* background-color: green; */
     width: 290px;
     height: 290px;
   }
@@ -130,7 +130,7 @@
 
 @media screen and (max-width: 1005px) {
   .card {
-    background-color: pink;
+    /* background-color: pink; */
     width: 260px;
     height: 260px;
   }
@@ -145,7 +145,7 @@
 
 @media screen and (max-width: 915px) {
   .card {
-    background-color: purple;
+    /* background-color: purple; */
     width: 220px;
     height: 220px;
   }
@@ -157,7 +157,7 @@
 
 @media screen and (max-width: 795px) {
   .card {
-    background-color: orange;
+    /* background-color: orange; */
     width: 191px;
     height: 191px;
   }
@@ -169,7 +169,7 @@
 
 @media screen and (max-width: 711px) {
   .card {
-    background-color: red;
+    /* background-color: red; */
     width: 170px;
     height: 170px;
   }
@@ -184,7 +184,7 @@
 
 @media screen and (max-width: 588px) {
   .card {
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     width: 150px;
     height: 150px;
   }
