@@ -1,0 +1,100 @@
+.card-cs__image {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-cs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 328px;
+  height: 328px;
+  background-color: rgba(233, 233, 233, 1);
+  border: 1px solid black;
+  border-radius: 19px;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.card-cs:hover {
+  cursor: pointer;
+}
+
+.card-cs__visible {
+  visibility: visible;
+}
+
+.card-cs__header {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.card-cs__name {
+  display: flex;
+  align-items: center;
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0 10px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width: 1391px) {
+  .card-cs {
+    background-color: blue;
+    width: 300px;
+    height: 300px;
+  }
+  .card-cs__image {
+    height: 235px;
+    width: 235px;
+  }
+  .card-cs__name {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 1308px) {
+  .card-cs {
+    background-color: green;
+    width: 270px;
+    height: 270px;
+  }
+  .card-cs__image {
+    height: 210px;
+    width: 210px;
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  .card-cs {
+    background-color: pink;
+    width: 240px;
+    height: 240px;
+  }
+  .card-cs__image {
+    height: 180px;
+    width: 180px;
+  }
+  .card-cs__name {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .card-cs {
+    background-color: purple;
+    width: 197px;
+    height: 197px;
+  }
+  .card-cs__image {
+    height: 140px;
+    width: 140px;
+  }
+}

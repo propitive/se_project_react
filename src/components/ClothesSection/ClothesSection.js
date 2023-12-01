@@ -1,5 +1,6 @@
 import React from "react";
 import ItemCard from "../ItemCard/ItemCard";
+import ItemCardClothesSection from "../ItemCardClothesSection/ItemCardClothesSection";
 import "./ClothesSection.css";
 import CurrentUserContext from "../../context/CurrentUserContext";
 
@@ -23,7 +24,7 @@ const ClothesSection = ({
         {currentUser !== null &&
           cards.map((card, index) => {
             return (
-              <ItemCard
+              <ItemCardClothesSection
                 key={index}
                 card={card}
                 onCardClick={onCardClick}

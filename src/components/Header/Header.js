@@ -73,7 +73,7 @@ const Header = ({
                 <button onClick={handleAddClick} className="navigation__button">
                   + Add clothes
                 </button>
-                <div>
+                <div className="navigation__profile-section">
                   <span className="navigation__username">
                     {currentUser.name || username}
                   </span>{" "}
