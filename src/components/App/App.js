@@ -230,6 +230,7 @@ const App = () => {
             <Header
               weatherData={weatherData}
               handleAddClick={() => setActiveModal("create")}
+              handleEditProfileOpen={handleEditProfileOpen}
               openLoginModal={() => setIsLoginModalOpen(true)}
               openRegisterModal={() => setIsRegisterModalOpen(true)}
               setUser={setUser}

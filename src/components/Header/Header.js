@@ -11,6 +11,7 @@ import * as AiIcons from "react-icons/ai";
 const Header = ({
   weatherData,
   handleAddClick,
+  handleEditProfileOpen,
   openLoginModal,
   openRegisterModal,
   setUser,
@@ -182,6 +183,16 @@ const Header = ({
                     <li onClick={handleSignOut} className="nav-text">
                       <span>Sign out</span>
                     </li>
+                  )}
+                  {isProfilePage && (
+                    <>
+                      <li onClick={handleEditProfileOpen} className="nav-text">
+                        <span>Change Profile Data</span>
+                      </li>
+                      <li onClick={handleSignOut} className="nav-text">
+                        <span>Log out</span>
+                      </li>
+                    </>
                   )}
                 </>
               ) : (

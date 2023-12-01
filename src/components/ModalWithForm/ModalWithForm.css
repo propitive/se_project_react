@@ -284,6 +284,12 @@
   .login__input {
     width: 380px;
   }
+  .login__label-invalid {
+    width: 380px;
+  }
+  .login__input-invalid {
+    width: 380px;
+  }
   .register__input {
     width: 380px;
   }
@@ -302,6 +308,12 @@
   .login__input {
     width: 320px;
   }
+  .login__label-invalid {
+    width: 320px;
+  }
+  .login__input-invalid {
+    width: 320px;
+  }
   .register__input {
     width: 320px;
   }
@@ -315,6 +327,12 @@
     width: 280px;
   }
   .login__input {
+    width: 280px;
+  }
+  .login__label-invalid {
+    width: 280px;
+  }
+  .login__input-invalid {
     width: 280px;
   }
   .register__input {
