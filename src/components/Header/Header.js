@@ -73,22 +73,24 @@ const Header = ({
                 <button onClick={handleAddClick} className="navigation__button">
                   + Add clothes
                 </button>
-                <span className="navigation__username">
-                  {currentUser.name || username}
-                </span>
-                <Link to="/profile">
-                  {currentUser.avatar ? (
-                    <img
-                      className="navigation__user"
-                      src={currentUser.avatar}
-                      alt="user avatar"
-                    />
-                  ) : (
-                    <button className="navigation__default">
-                      {currentUser.name.charAt(0).toUpperCase()}
-                    </button>
-                  )}
-                </Link>
+                <div>
+                  <span className="navigation__username">
+                    {currentUser.name || username}
+                  </span>{" "}
+                  <Link to="/profile">
+                    {currentUser.avatar ? (
+                      <img
+                        className="navigation__user"
+                        src={currentUser.avatar}
+                        alt="user avatar"
+                      />
+                    ) : (
+                      <button className="navigation__default">
+                        {currentUser.name.charAt(0).toUpperCase()}
+                      </button>
+                    )}
+                  </Link>
+                </div>
                 {!isMainPage && !isProfilePage && (
                   <button
                     onClick={handleSignOut}

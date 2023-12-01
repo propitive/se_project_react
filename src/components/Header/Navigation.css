@@ -36,6 +36,12 @@
   background-color: white;
 }
 
+.navigation__profile-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .navigation__username {
   font-family: "Space Grotesk";
   font-weight: 700;
