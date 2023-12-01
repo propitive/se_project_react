@@ -36,3 +36,9 @@
   flex-wrap: wrap;
   gap: 17px 17px;
 }
+
+@media screen and (max-width: 1000px) {
+  .clothes-section {
+    margin: 0;
+  }
+}
