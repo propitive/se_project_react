@@ -162,14 +162,6 @@
     height: 150px;
     width: 150px;
   }
-  .card-cs__like-button {
-    width: 20px;
-    height: 20px;
-  }
-  .card-cs__like-button-image {
-    width: 20px;
-    height: 20px;
-  }
   .card-cs__name {
     height: 20px;
   }
@@ -182,22 +174,11 @@
     height: 260px;
   }
   .card-cs__image {
-    height: 180px;
-    width: 180px;
+    height: 210px;
+    width: 210px;
   }
   .card-cs__name {
-    font-size: 11px;
-  }
-  .card-cs__like-button {
-    width: 20px;
-    height: 20px;
-  }
-  .card-cs__like-button-image {
-    width: 20px;
-    height: 20px;
-  }
-  .card-cs__name {
-    height: 20px;
+    font-size: 14px;
   }
 }
 
@@ -208,8 +189,8 @@
     height: 220px;
   }
   .card-cs__image {
-    height: 150px;
-    width: 150px;
+    height: 170px;
+    width: 170px;
   }
 }
 
@@ -220,11 +201,8 @@
     height: 191px;
   }
   .card-cs__image {
-    height: 130px;
-    width: 140px;
-  }
-  .card-cs__name {
-    height: 18px;
+    height: 150px;
+    width: 150px;
   }
 }
 
@@ -235,11 +213,11 @@
     height: 170px;
   }
   .card-cs__image {
-    height: 110px;
-    width: 110px;
+    height: 125px;
+    width: 125px;
   }
   .card-cs__name {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
 
@@ -252,5 +230,8 @@
   .card-cs__image {
     height: 110px;
     width: 110px;
+  }
+  .card-cs__name {
+    font-size: 10px;
   }
 }
