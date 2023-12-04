@@ -86,6 +86,95 @@
   }
 } */
 
+@media screen and (max-width: 1390px) {
+  .card-cs {
+    background-color: rgb(192, 233, 255);
+    width: 300px;
+    height: 300px;
+  }
+  .card-cs__image {
+    height: 220px;
+    width: 220px;
+  }
+  .card-cs__like-button {
+    width: 20px;
+    height: 20px;
+  }
+  .card-cs__like-button-image {
+    width: 20px;
+    height: 20px;
+  }
+  .card-cs__name {
+    height: 20px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1307px) {
+  .card-cs {
+    background-color: rgb(192, 255, 194);
+    width: 270px;
+    height: 270px;
+  }
+  .card-cs__image {
+    height: 210px;
+    width: 210px;
+  }
+  .card-cs__name {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .card-cs {
+    background-color: rgb(252, 255, 192);
+    width: 250px;
+    height: 250px;
+  }
+  .card-cs__image {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 1157px) {
+  .card-cs {
+    background-color: rgb(255, 200, 192);
+    width: 220px;
+    height: 220px;
+  }
+  .card-cs__image {
+    height: 175px;
+    width: 175px;
+  }
+  .card-cs__name {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 1067px) {
+  .card-cs {
+    background-color: rgb(252, 255, 192);
+    width: 195px;
+    height: 195px;
+  }
+  .card-cs__image {
+    height: 150px;
+    width: 150px;
+  }
+  .card-cs__like-button {
+    width: 20px;
+    height: 20px;
+  }
+  .card-cs__like-button-image {
+    width: 20px;
+    height: 20px;
+  }
+  .card-cs__name {
+    height: 20px;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .card-cs {
     background-color: pink;
