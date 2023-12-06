@@ -34,12 +34,18 @@
   cursor: pointer;
   border: none;
   background-color: white;
+  border: 2px solid black;
+  padding: 11px 5px;
+  border-radius: 10px;
 }
 
 .navigation__profile-section {
   display: flex;
   align-items: center;
   gap: 10px;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .navigation__username {
