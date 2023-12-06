@@ -73,3 +73,15 @@
   justify-content: space-between;
   padding: 10px 20px;
 }
+
+@media screen and (max-width: 542px) {
+  .item-modal__preview-image {
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 445px) {
+  .item-modal__preview-image {
+    max-width: 300px;
+  }
+}
