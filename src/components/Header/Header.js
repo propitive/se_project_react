@@ -159,6 +159,9 @@ const Header = ({
                           className="navigation__user"
                           src={currentUser.avatar}
                           alt="user avatar"
+                          onClick={() =>
+                            !isProfilePage ? setSidebar(false) : undefined
+                          }
                         />
                       ) : (
                         <button className="navigation__default">
