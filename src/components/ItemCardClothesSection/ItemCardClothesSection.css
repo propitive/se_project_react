@@ -218,6 +218,18 @@
   }
   .card-cs__name {
     font-size: 11px;
+    height: 16px;
+  }
+  .card-cs__like-button {
+    width: 16px;
+    height: 16px;
+  }
+  .card-cs__like-button-image {
+    width: 16px;
+    height: 16px;
+  }
+  .card-cs__header {
+    gap: 8px;
   }
 }
 

@@ -104,13 +104,13 @@
 
 @media screen and (max-width: 1119px) {
   .card {
-    /* background-color: green; */
+    background-color: green;
     width: 290px;
     height: 290px;
   }
   .card__image {
-    height: 200px;
-    width: 200px;
+    height: 230px;
+    width: 230px;
   }
   .card__name {
     font-size: 12px;
@@ -130,13 +130,13 @@
 
 @media screen and (max-width: 1005px) {
   .card {
-    /* background-color: pink; */
+    background-color: pink;
     width: 260px;
     height: 260px;
   }
   .card__image {
-    height: 180px;
-    width: 180px;
+    height: 210px;
+    width: 210px;
   }
   .card__name {
     font-size: 11px;
@@ -145,9 +145,21 @@
 
 @media screen and (max-width: 915px) {
   .card {
-    /* background-color: purple; */
+    background-color: purple;
     width: 220px;
     height: 220px;
+  }
+  .card__image {
+    height: 170px;
+    width: 170px;
+  }
+}
+
+@media screen and (max-width: 795px) {
+  .card {
+    background-color: orange;
+    width: 191px;
+    height: 191px;
   }
   .card__image {
     height: 150px;
@@ -155,36 +167,36 @@
   }
 }
 
-@media screen and (max-width: 795px) {
-  .card {
-    /* background-color: orange; */
-    width: 191px;
-    height: 191px;
-  }
-  .card__image {
-    height: 130px;
-    width: 140px;
-  }
-}
-
 @media screen and (max-width: 711px) {
   .card {
-    /* background-color: red; */
+    background-color: red;
     width: 170px;
     height: 170px;
   }
   .card__image {
-    height: 110px;
-    width: 110px;
+    height: 130px;
+    width: 130px;
   }
   .card__name {
-    font-size: 10px;
+    font-size: 11px;
+    height: 16px;
+  }
+  .card__like-button {
+    width: 16px;
+    height: 16px;
+  }
+  .card__like-button-image {
+    width: 16px;
+    height: 16px;
+  }
+  .card__header {
+    gap: 8px;
   }
 }
 
 @media screen and (max-width: 588px) {
   .card {
-    /* background-color: blueviolet; */
+    background-color: blueviolet;
     width: 150px;
     height: 150px;
   }

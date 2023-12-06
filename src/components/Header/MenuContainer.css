@@ -45,7 +45,8 @@
 }
 
 .nav-menu {
-  background-color: #333333;
+  /* background-color: #333333; */
+  background-color: #222f3e;
   width: 250px;
   height: 100vh;
   display: flex;
@@ -115,11 +116,13 @@
   padding: 0;
   margin: 0;
   z-index: 5;
-  background-color: #333333;
+  /* background-color: #333333; */
+  background-color: #222f3e;
 }
 
 .navbar-toggle {
-  background-color: #333333;
+  /* background-color: #333333; */
+  background-color: #222f3e;
   padding-left: 40px;
   width: 100%;
   height: 80px;
