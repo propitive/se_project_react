@@ -27,7 +27,7 @@
   align-items: center;
   gap: 40px;
   position: relative;
-  right: 20px;
+  /* right: 20px; */
 }
 
 .header__date {
@@ -45,7 +45,7 @@
   align-content: flex-start;
   position: relative;
   align-content: flex-start;
-  left: 20px;
+  /* left: 20px; */
 }
 
 @media screen and (max-width: 1000px) {

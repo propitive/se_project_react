@@ -4,7 +4,7 @@
 
 .main__items {
   width: 100%;
-  max-width: 1022px;
+  max-width: 1024px;
   display: flex;
   gap: 17px 17px;
   flex-wrap: wrap;
