@@ -55,6 +55,10 @@ const Header = ({
   const isMainPage = location.pathname === "/";
   const isProfilePage = location.pathname === "/profile";
 
+  const navigationProfileSectionClassname = isMainPage
+    ? "navigation__profile-section"
+    : "navigation__profile-section__profile";
+
   return (
     city && (
       <header className="header">
@@ -82,7 +86,7 @@ const Header = ({
                     color: "black",
                   }}
                 >
-                  <div className="navigation__profile-section">
+                  <div className={navigationProfileSectionClassname}>
                     <span className="navigation__username">
                       {currentUser.name || username}
                     </span>{" "}
