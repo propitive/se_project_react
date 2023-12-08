@@ -119,6 +119,21 @@
 @media screen and (max-width: 670px) {
   .modal-logout__container {
     width: 350px;
+    /* padding: 24px 26px 24px; */
+  }
+  .modal-logout__title {
+    margin: 0 0 15px;
+  }
+  .modal-logout__paragraph {
+    font-size: 14px;
+    margin: 0 0 20px;
+  }
+  .modal-logout__button {
+    height: 54px;
+  }
+  .modal-logout__button-close {
+    top: -30px;
+    right: -30px;
   }
 }
 
@@ -127,7 +142,6 @@
     width: 200px;
   }
   .modal-logout__paragraph {
-    font-size: 16px;
     margin: 0 0 20px;
   }
 }
