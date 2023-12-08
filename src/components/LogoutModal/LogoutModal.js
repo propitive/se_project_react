@@ -30,18 +30,25 @@ function LogoutModal({ handleSignOut, isOpen }) {
       className={`modal-logout ${isOpen ? "modal-logout__open" : ""}`}
       onClick={handleCloseOnOverlayClick}
     >
-      <h2 className="modal-logout__title">Are you sure?</h2>
-      <p className="modal-logout__paragraph"></p>
-      <Link to={"/"} style={{ textDecoration: "none" }}>
-        <button className="modal-logout__button" onClick={() => handleLogout()}>
-          <p className="modal-logout__button-text">{"Sign Out"}</p>
-        </button>
-      </Link>
-      <button
-        className="modal-logout__button-close"
-        type="button"
-        onClick={() => handleSignOut()}
-      ></button>
+      <div className="modal-logout__container">
+        <h2 className="modal-logout__title">Are you sure?</h2>
+        <p className="modal-logout__paragraph">
+          Are you sure you are going to want to sign out?
+        </p>
+        <Link to={"/"} style={{ textDecoration: "none" }}>
+          <button
+            className="modal-logout__button"
+            onClick={() => handleLogout()}
+          >
+            <p className="modal-logout__button-text">{"Sign Out"}</p>
+          </button>
+        </Link>
+        <button
+          className="modal-logout__button-close"
+          type="button"
+          onClick={() => handleSignOut()}
+        ></button>
+      </div>
     </div>
   );
 }

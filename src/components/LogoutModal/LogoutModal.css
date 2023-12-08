@@ -12,6 +12,7 @@
   align-items: center;
   z-index: 3;
   visibility: hidden;
+  font-family: "Space Grotesk";
 }
 
 .modal-logout__open {
@@ -19,25 +20,51 @@
   opacity: 1;
 }
 
+.modal-logout__container {
+  width: 440px;
+  border-radius: 20px;
+  flex-direction: column;
+  font-family: "Roboto Condensed", sans-serif, Arial;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 20px;
+  background: white;
+  justify-content: space-between;
+  display: flex;
+  padding: 34px 36px 34px;
+  position: absolute;
+}
+
 .modal-logout__title {
+  font-family: "Space Grotesk";
+
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   margin: 0 0 20px;
   color: #1a1b22;
-  font-family: "Roboto", Arial, sans-serif;
+  /* font-family: "Roboto", Arial, sans-serif; */
   font-size: 24px;
   font-weight: 900;
 }
 
+.modal-logout__paragraph {
+  font-family: "Space Grotesk";
+  margin: 15px 0 25px;
+  font-size: 20px;
+  line-height: 28px;
+}
+
 .modal-logout__button {
+  font-family: "Space Grotesk";
+
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 64px;
-  background-color: rgb(181, 143, 94);
-  outline: 3px rgb(181, 143, 94) solid;
+  background-color: red;
+  outline: 3px red solid;
   outline-offset: -3px;
   border-radius: 30px;
   border: none;
@@ -70,15 +97,15 @@
 }
 
 .modal-logout__button:hover .modal-logout__button-text {
-  color: rgb(181, 143, 94);
+  color: red;
 }
 
 .modal-logout__button:hover .modal-logout__button-svg path {
-  fill: rgb(181, 143, 94);
+  fill: red;
 }
 
 .modal-logout__button-close {
-  background: url(../../images/close-button.svg) center no-repeat;
+  background: url(../../images/close-button-white.svg) center no-repeat;
   height: 40px;
   width: 40px;
   border: none;
@@ -90,13 +117,13 @@
 }
 
 @media screen and (max-width: 670px) {
-  .modal-logout__form {
+  .modal-logout__container {
     width: 350px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .modal-logout__form {
+  .modal-logout__container {
     width: 200px;
   }
   .modal-logout__paragraph {
