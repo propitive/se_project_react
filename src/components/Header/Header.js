@@ -71,7 +71,10 @@ const Header = ({
           </div>
 
           <div className="header__nav">
-            <ToggleSwitch isChecked={isToggleOn} onToggle={handleToggle} />
+            {isMainPage ? (
+              <ToggleSwitch isChecked={isToggleOn} onToggle={handleToggle} />
+            ) : undefined}
+            {/* <ToggleSwitch isChecked={isToggleOn} onToggle={handleToggle} /> */}
 
             {currentUser ? (
               <>
@@ -228,9 +231,14 @@ const Header = ({
                   </li>
                 </>
               )}
-              <div className="toggle-switch__container">
-                <ToggleSwitch isChecked={isToggleOn} onToggle={handleToggle} />
-              </div>
+              {isMainPage ? (
+                <div className="toggle-switch__container">
+                  <ToggleSwitch
+                    isChecked={isToggleOn}
+                    onToggle={handleToggle}
+                  />
+                </div>
+              ) : undefined}
               {/* {SidebarData.map((item, index) => {
                       return (
                         <li key={index} className={item.cName}>
