@@ -2,14 +2,12 @@ import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "./SideBar.css";
 import CurrentUserContext from "../../context/CurrentUserContext";
-function SideBar({ handleSignOut, handleEditProfileOpen }) {
+function SideBar({ handleEditProfileOpen, handleLogoutModalOpen }) {
   const currentUser = useContext(CurrentUserContext);
-  const history = useHistory();
 
-  const handleLogout = () => {
-    handleSignOut();
-    history.push("/");
-  };
+  // const handleLogout = () => {
+  //   handleOpenLogoutModal();
+  // };
 
   return (
     <div className="side-bar">
@@ -31,7 +29,7 @@ function SideBar({ handleSignOut, handleEditProfileOpen }) {
         <button onClick={handleEditProfileOpen} className="side-bar__button">
           Change Profile Data
         </button>
-        <button onClick={handleLogout} className="side-bar__logout">
+        <button onClick={handleLogoutModalOpen} className="side-bar__logout">
           Log out
         </button>
       </div>

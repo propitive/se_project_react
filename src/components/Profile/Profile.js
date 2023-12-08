@@ -12,6 +12,7 @@ function Profile({
   onCardLike,
   handleSetUserNull,
   handleEditProfileOpen,
+  handleLogoutModalOpen,
 }) {
   const history = useHistory();
 
@@ -34,6 +35,7 @@ function Profile({
         <SideBar
           handleSignOut={handleSignOut}
           handleEditProfileOpen={handleEditProfileOpen}
+          handleLogoutModalOpen={handleLogoutModalOpen}
         />
         <ClothesSection
           cards={cards}

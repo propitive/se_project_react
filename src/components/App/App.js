@@ -21,12 +21,13 @@ import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
+import LogoutModal from "../LogoutModal/LogoutModal";
 
 const APIKey = "44d763e20353ebef92d497833d045a80";
 
 const App = () => {
   const [weatherData, setWeatherData] = useState({});
-  const [activeModal, setActiveModal] = useState("");
+  const [activeModal, setActiveModal] = useState("logout");
   const [selectCard, setSelectCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [cards, setCards] = useState([]);
@@ -39,6 +40,7 @@ const App = () => {
   const [token, setToken] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isEditProfileModalOpen, setIsEditProfileModalOpen] = useState(false);
+  const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
 
   const handleEditProfile = (name, avatar) => {
     setIsLoading(true);
@@ -178,6 +180,23 @@ const App = () => {
           .catch((err) => console.log(err));
   };
 
+  console.log(activeModal);
+  const handleLogoutModalOpen = () => {
+    setActiveModal("logout");
+    console.log("opening logout modal" + ` logout modal is ${activeModal}`);
+  };
+
+  const handleLogoutModalClose = () => {
+    setActiveModal("");
+  };
+
+  // const handleLogoutModalOpen = useCallback(() => {
+  //   setIsLogoutModalOpen(true);
+  //   console.log(
+  //     "opening logout modal" + `logout modal is ${isLogoutModalOpen}`
+  //   );
+  // }, []);
+
   const openDeleteModal = () => {
     setDeleteModalOpen(true);
     setActiveModal("");
@@ -251,6 +270,8 @@ const App = () => {
                     handleSetUserNull={handleSetUserNull}
                     handleEditProfileOpen={handleEditProfileOpen}
                     handleSignOut={handleSignOut}
+                    // handleLogoutModalOpen={handleLogoutModalOpen}
+                    handleLogoutModalOpen={handleLogoutModalOpen}
                   />
                   <Route path="/">
                     <Main
@@ -306,6 +327,12 @@ const App = () => {
                       setIsLoginModalOpen(true);
                       setIsRegisterModalOpen(false);
                     }}
+                  />
+                )}
+                {activeModal === "logout" && (
+                  <LogoutModal
+                    handleSignOut={handleLogoutModalClose}
+                    isOpen={true}
                   />
                 )}
               </>

@@ -15,6 +15,7 @@
 @import url(./components/SideBar/SideBar.css);
 @import url(./components/ToggleSwitch/ToggleSwitch.css);
 @import url(./components/WeatherCard/WeatherCard.css);
+@import url(./components/LogoutModal/LogoutModal.css);
 
 body {
   margin: 0;
