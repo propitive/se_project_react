@@ -15,7 +15,10 @@
 
 .item-modal__description {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  padding-bottom: 10px;
   justify-content: space-between;
 }
 
@@ -76,23 +79,30 @@
 .item-modal__content {
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 20px 20px 10px;
   flex-direction: column;
-  gap: 20px;
+  /* gap: 20px; */
 }
 
 @media screen and (max-width: 542px) {
   .item-modal__preview-image {
     max-width: 350px;
   }
-  .item-modal__close-button {
+  /* .item-modal__close-button {
     top: 20px;
     right: 20px;
-  }
+  } */
 }
 
 @media screen and (max-width: 445px) {
   .item-modal__preview-image {
     max-width: 300px;
   }
+  /* .item-modal__weather {
+    font-size: 16px;
+  }
+  .item-modal__delete {
+    font-size: 16px;
+    height: 25px;
+  } */
 }
