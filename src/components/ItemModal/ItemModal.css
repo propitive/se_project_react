@@ -84,11 +84,75 @@
   /* gap: 20px; */
 }
 
+.item-modal__delete-buton {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: red;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  background: #e62222;
+}
+
+.item-modal__delete-buton,
+.item-modal__delete-buton span {
+  transition: 200ms;
+}
+
+.item-modal__delete-buton .item-modal__delete-text {
+  transform: translateX(10px);
+  color: white;
+  font-weight: bold;
+  font-family: "Space Grotesk";
+  font-size: 18px;
+}
+
+.item-modal__delete-buton .icon {
+  position: absolute;
+  border-left: 1px solid #c41b1b;
+  transform: translateX(90px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-modal__delete-buton svg {
+  width: 15px;
+  fill: #eee;
+}
+
+.item-modal__delete-buton:hover {
+  background: #ff3636;
+}
+
+.item-modal__delete-buton:hover .item-modal__delete-text {
+  color: transparent;
+}
+
+.item-modal__delete-buton:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(-20px);
+}
+
+.item-modal__delete-buton:focus {
+  outline: none;
+}
+
+.item-modal__delete-buton:active .icon svg {
+  transform: scale(0.8);
+}
+
 @media screen and (max-width: 542px) {
   .item-modal__preview-image {
     max-width: 350px;
   }
-  /* .item-modal__close-button {
+  /* .item-modal__close-.item-modal__delete-buton {
     top: 20px;
     right: 20px;
   } */
