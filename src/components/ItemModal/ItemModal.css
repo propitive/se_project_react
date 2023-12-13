@@ -13,6 +13,12 @@
   z-index: 3;
 }
 
+.item-modal__description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .item-modal__container {
   background: #ffffff;
   border-radius: 16px;
@@ -26,6 +32,7 @@
   display: flex;
   object-fit: cover;
   max-width: 400px;
+  margin: 0 auto 0;
 }
 
 .item-modal__close-button {
@@ -44,16 +51,14 @@
   font-family: "Space Grotesk";
   font-weight: 700;
   font-size: 20px;
-  margin-left: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 0 auto 0;
 }
 
 .item-modal__weather {
   font-family: "Space Grotesk";
   font-weight: 700;
   font-size: 20px;
-  margin-left: 20px;
+  margin: 0;
 }
 
 .item-modal__delete {
@@ -72,11 +77,17 @@
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
+  flex-direction: column;
+  gap: 20px;
 }
 
 @media screen and (max-width: 542px) {
   .item-modal__preview-image {
     max-width: 350px;
+  }
+  .item-modal__close-button {
+    top: 20px;
+    right: 20px;
   }
 }
 

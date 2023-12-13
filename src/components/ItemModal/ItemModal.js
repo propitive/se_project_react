@@ -26,20 +26,20 @@ function ItemModal({ card, onClose, onOpenDeleteModal }) {
           src={card.imageUrl}
         />
         <div className="item-modal__content">
-          <div className="item-modal__description">
-            <h2 className="item-modal__title">{card.name}</h2>
+          <h2 className="item-modal__title">{card.name}</h2>
 
+          <div className="item-modal__description">
             <p className="item-modal__weather">Weather: {card.weather}</p>
+            {isCardOwner && (
+              <button
+                className="item-modal__delete"
+                onClick={onOpenDeleteModal}
+                type="button"
+              >
+                Delete item
+              </button>
+            )}
           </div>
-          {isCardOwner && (
-            <button
-              className="item-modal__delete"
-              onClick={onOpenDeleteModal}
-              type="button"
-            >
-              Delete item
-            </button>
-          )}
         </div>
       </div>
     </div>
