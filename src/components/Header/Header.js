@@ -167,8 +167,11 @@ const Header = ({
               </li>
               {currentUser ? (
                 <>
-                  <div className="nav-menu__profile-section">
-                    <Link to="/profile" style={{ height: "40px" }}>
+                  <Link
+                    to="/profile"
+                    style={{ height: "40px", textDecoration: "none" }}
+                  >
+                    <div className="nav-menu__profile-section">
                       {currentUser.avatar ? (
                         <img
                           className="navigation__user"
@@ -183,11 +186,12 @@ const Header = ({
                           {currentUser.name.charAt(0).toUpperCase()}
                         </button>
                       )}
-                    </Link>
-                    <span className="nav-menu__username">
-                      {currentUser.name || username}
-                    </span>
-                  </div>
+
+                      <span className="nav-menu__username">
+                        {currentUser.name || username}
+                      </span>
+                    </div>
+                  </Link>
                   <li onClick={handleAddClick} className="nav-text">
                     <span>+ Add Clothes</span>
                   </li>
