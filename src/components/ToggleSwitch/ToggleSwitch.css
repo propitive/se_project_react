@@ -1,5 +1,6 @@
 .toggle-switch__container {
   display: flex;
+  margin-top: 5px;
 }
 
 .toggle-switch {
