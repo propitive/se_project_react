@@ -65,3 +65,67 @@
   right: 20px;
   top: 20px;
 }
+
+.delete-modal__delete-buton {
+  width: 220px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: red;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  background: #e62222;
+}
+
+.delete-modal__delete-buton,
+.delete-modal__delete-buton span {
+  transition: 200ms;
+}
+
+.delete-modal__delete-buton .delete-modal__delete-text {
+  transform: translateX(10px);
+  color: white;
+  font-weight: bold;
+  font-family: "Space Grotesk";
+  font-size: 18px;
+}
+
+.delete-modal__delete-buton .icon {
+  position: absolute;
+  border-left: 1px solid #c41b1b;
+  transform: translateX(160px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-modal__delete-buton svg {
+  width: 15px;
+  fill: #eee;
+}
+
+.delete-modal__delete-buton:hover {
+  background: #ff3636;
+}
+
+.delete-modal__delete-buton:hover .delete-modal__delete-text {
+  color: transparent;
+}
+
+.delete-modal__delete-buton:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(15px);
+}
+
+.delete-modal__delete-buton:focus {
+  outline: none;
+}
+
+.delete-modal__delete-buton:active .icon svg {
+  transform: scale(0.8);
+}

@@ -16,11 +16,11 @@ function CardDeleteModal({ onClose, handleDelete, isLoading }) {
           {isLoading ? "Saving..." : "Yes, delete item"}
         </p> */}
         <button
-          className="item-modal__delete-buton"
+          className="delete-modal__delete-buton"
           onClick={handleDelete}
           type="button"
         >
-          <span className="item-modal__delete-text">
+          <span className="delete-modal__delete-text">
             {isLoading ? "Saving..." : "Yes, delete item"}
           </span>
           <span className="icon">
