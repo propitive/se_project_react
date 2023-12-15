@@ -188,6 +188,11 @@ const App = () => {
 
   const handleLogoutModalClose = () => {
     setActiveModal("");
+    // handleSignOut();
+  };
+
+  const handleLogoutModalLogout = () => {
+    setActiveModal("");
     handleSignOut();
   };
 
@@ -251,6 +256,7 @@ const App = () => {
               weatherData={weatherData}
               handleAddClick={() => setActiveModal("create")}
               handleEditProfileOpen={handleEditProfileOpen}
+              handleLogoutModalOpen={handleLogoutModalOpen}
               openLoginModal={() => setIsLoginModalOpen(true)}
               openRegisterModal={() => setIsRegisterModalOpen(true)}
               setUser={setUser}
@@ -332,7 +338,8 @@ const App = () => {
                 )}
                 {activeModal === "logout" && (
                   <LogoutModal
-                    handleSignOut={handleLogoutModalClose}
+                    handleSignOut={handleLogoutModalLogout}
+                    handleLogoutModalClose={handleLogoutModalClose}
                     isOpen={true}
                   />
                 )}

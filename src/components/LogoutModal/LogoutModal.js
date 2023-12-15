@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-function LogoutModal({ handleSignOut, isOpen }) {
+function LogoutModal({ handleLogoutModalClose, handleSignOut, isOpen }) {
   const history = useHistory();
 
   const handleLogout = () => {
@@ -11,14 +11,14 @@ function LogoutModal({ handleSignOut, isOpen }) {
 
   const handleCloseOnOverlayClick = (event) => {
     if (event.target === event.currentTarget) {
-      handleSignOut();
+      handleLogoutModalClose();
     }
   };
 
   useEffect(() => {
     const close = (e) => {
       if (e.keyCode === 27) {
-        handleSignOut();
+        handleLogoutModalClose();
       }
     };
     window.addEventListener("keydown", close);
@@ -38,7 +38,7 @@ function LogoutModal({ handleSignOut, isOpen }) {
         <Link to={"/"} style={{ textDecoration: "none" }}>
           <button
             className="modal-logout__button"
-            onClick={() => handleLogout()}
+            onClick={() => handleSignOut()}
           >
             <p className="modal-logout__button-text">{"Sign Out"}</p>
           </button>
@@ -46,7 +46,7 @@ function LogoutModal({ handleSignOut, isOpen }) {
         <button
           className="modal-logout__button-close"
           type="button"
-          onClick={() => handleSignOut()}
+          onClick={() => handleLogoutModalClose()}
         ></button>
       </div>
     </div>

@@ -12,6 +12,7 @@ const Header = ({
   weatherData,
   handleAddClick,
   handleEditProfileOpen,
+  handleLogoutModalOpen,
   openLoginModal,
   openRegisterModal,
   setUser,
@@ -46,11 +47,11 @@ const Header = ({
   const history = useHistory();
   const location = useLocation();
 
-  const handleSignOut = () => {
-    localStorage.removeItem("token");
-    setUser(null);
-    history.push("/");
-  };
+  // const handleSignOut = () => {
+  //   localStorage.removeItem("token");
+  //   setUser(null);
+  //   history.push("/");
+  // };
 
   const isMainPage = location.pathname === "/";
   const isProfilePage = location.pathname === "/profile";
@@ -108,7 +109,7 @@ const Header = ({
                 </Link>
                 {!isMainPage && !isProfilePage && (
                   <button
-                    onClick={handleSignOut}
+                    onClick={handleLogoutModalOpen}
                     className="navigation__button"
                   >
                     Sign out
@@ -192,12 +193,12 @@ const Header = ({
                   </li>
                   {!isMainPage && !isProfilePage && (
                     // <button
-                    //   onClick={handleSignOut}
+                    //   onClick={handleLogoutModalOpen}
                     //   className="navigation__button"
                     // >
                     //   Sign out
                     // </button>
-                    <li onClick={handleSignOut} className="nav-text">
+                    <li onClick={handleLogoutModalOpen} className="nav-text">
                       <span>Sign out</span>
                     </li>
                   )}
@@ -206,7 +207,7 @@ const Header = ({
                       <li onClick={handleEditProfileOpen} className="nav-text">
                         <span>Change Profile Data</span>
                       </li>
-                      <li onClick={handleSignOut} className="nav-text">
+                      <li onClick={handleLogoutModalOpen} className="nav-text">
                         <span>Log out</span>
                       </li>
                     </>
