@@ -28,6 +28,15 @@
   gap: 10px;
   margin-left: 40px;
   color: white;
+  padding: 8px 0 8px 16px;
+  margin-left: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-menu__profile-section:hover {
+  background-color: rgba(21, 23, 23, 0.7);
+  /* color: rgb(181, 143, 94); */
 }
 
 .nav-menu__username {
