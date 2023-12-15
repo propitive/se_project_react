@@ -188,6 +188,7 @@ const App = () => {
 
   const handleLogoutModalClose = () => {
     setActiveModal("");
+    handleSignOut();
   };
 
   // const handleLogoutModalOpen = useCallback(() => {

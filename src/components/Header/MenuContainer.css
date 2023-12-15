@@ -108,7 +108,7 @@
 
 .nav-text span:hover {
   background-color: rgba(21, 23, 23, 0.7);
-  color: rgb(181, 143, 94);
+  /* color: rgb(181, 143, 94); */
 }
 
 .nav-menu-items {
