@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import React from "react";
 import "./ModalWithForm.css";
 
@@ -21,6 +22,16 @@ function ModalWithForm({
       onClose();
     }
   };
+
+  useEffect(() => {
+    const close = (e) => {
+      if (e.keyCode === 27) {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
 
   return (
     <div

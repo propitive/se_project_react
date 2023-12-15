@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import React from "react";
 import "./ItemModal.css";
 import CurrentUserContext from "../../context/CurrentUserContext";
@@ -11,6 +12,16 @@ function ItemModal({ card, onClose, onOpenDeleteModal }) {
       onClose();
     }
   };
+
+  useEffect(() => {
+    const close = (e) => {
+      if (e.keyCode === 27) {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
 
   return (
     <div className="item-modal__preview" onClick={handleCloseOnOverlayClick}>

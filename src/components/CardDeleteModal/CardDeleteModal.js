@@ -1,9 +1,26 @@
+import { useEffect } from "react";
 import React from "react";
 import "./CardDeleteModal.css";
 
 function CardDeleteModal({ onClose, handleDelete, isLoading }) {
+  const handleCloseOnOverlayClick = (event) => {
+    if (event.target === event.currentTarget) {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    const close = (e) => {
+      if (e.keyCode === 27) {
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
+
   return (
-    <div className="modal modal__confirm">
+    <div className="modal modal__confirm" onClick={handleCloseOnOverlayClick}>
       <div className="modal__delete-container">
         <button className="modal__close modal__close-item" onClick={onClose} />
         <div className="modal__message">
