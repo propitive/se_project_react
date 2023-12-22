@@ -1,21 +1,23 @@
 import React, { useState, useContext } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
+
 import "../Header/Header.css";
 import "../Header/Navigation.css";
-import headerLogo from "../../images/logo.svg";
+
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import CurrentUserContext from "../../context/CurrentUserContext";
+
+import headerLogo from "../../images/logo.svg";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 
 const Header = ({
-  weatherData,
   handleAddClick,
   handleEditProfileOpen,
   handleLogoutModalOpen,
   openLoginModal,
   openRegisterModal,
-  setUser,
+  weatherData,
 }) => {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",

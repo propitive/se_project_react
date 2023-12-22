@@ -1,7 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
-import ItemCard from "../ItemCard/ItemCard";
+
 import "./Main.css";
+
+import CurrentUserContext from "../../context/CurrentUserContext";
+import ItemCard from "../ItemCard/ItemCard";
 import WeatherCard from "../WeatherCard/WeatherCard";
+
 import { CurrentTemperatureUnitContext } from "../../context/CurrentTemperatureUnit";
 import {
   getForecastWeather,
@@ -9,9 +13,8 @@ import {
   handleRetrieveSunrise,
   handleRetrieveSunset,
 } from "../../utils/weatherApi";
-import CurrentUserContext from "../../context/CurrentUserContext";
 
-function Main({ cards, weatherData, onCardClick, onCardLike }) {
+function Main({ cards, onCardClick, onCardLike, weatherData }) {
   const actualWeather = weatherData.temperature;
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   const currentUser = React.useContext(CurrentUserContext);

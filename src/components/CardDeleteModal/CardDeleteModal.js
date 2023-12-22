@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import React from "react";
+
 import "./CardDeleteModal.css";
 
 function CardDeleteModal({ onClose, handleDelete, isLoading }) {

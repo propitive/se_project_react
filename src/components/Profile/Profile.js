@@ -1,18 +1,19 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
+
+import "./Profile.css";
+
 import SideBar from "../SideBar/SideBar";
 import ClothesSection from "../ClothesSection/ClothesSection";
-import CurrentUserContext from "../../context/CurrentUserContext";
-import "./Profile.css";
 
 function Profile({
   cards,
   handleAddClick,
+  handleEditProfileOpen,
+  handleSetUserNull,
+  handleLogoutModalOpen,
   onCardClick,
   onCardLike,
-  handleSetUserNull,
-  handleEditProfileOpen,
-  handleLogoutModalOpen,
 }) {
   const history = useHistory();
 

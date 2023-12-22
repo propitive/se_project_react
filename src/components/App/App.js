@@ -40,48 +40,20 @@ const App = () => {
   const [token, setToken] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isEditProfileModalOpen, setIsEditProfileModalOpen] = useState(false);
-  const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
 
-  const handleEditProfile = (name, avatar) => {
-    setIsLoading(true);
-    const token = localStorage.getItem("token");
-    Api.updateUserInfo(name, avatar, token)
-      .then((res) => {
-        closeAllModals();
-        setUser(res);
-      })
-      .catch((err) => console.log(err))
-      .finally(() => {
-        setIsLoading(false);
-      });
-  };
+  // effects
 
-  const handleEditProfileOpen = () => {
-    setIsEditProfileModalOpen(true);
-  };
-
-  const handleEditProfileClose = () => {
-    setIsEditProfileModalOpen(false);
-  };
-  const handleSignOut = () => {
-    localStorage.removeItem("token");
-    setUser(null);
-  };
-
-  const isReloading = (token) => {
-    checkToken(token)
-      .then((decoded) => {
-        setUser(decoded.data);
-        setIsLoginModalOpen(false);
-        setIsRegisterModalOpen(false);
-        setAuthError("");
-        setToken(token);
-      })
-      .catch((error) => {
-        console.error("Error checking token:", error);
-        setAuthError("Error checking token");
-      });
-  };
+  useEffect(() => {
+    if (token) {
+      Api.getCards(token)
+        .then(({ data }) => {
+          setCards(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [token]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -93,38 +65,59 @@ const App = () => {
     setIsLoading(false);
   }, []);
 
-  const handleLogin = ({ email, password }) => {
-    signIn(email, password)
-      .then((res) => {
-        if (res && res.token) {
-          localStorage.setItem("token", res.token);
-          isReloading(res.token);
-        } else {
-          setAuthError(res.message || "Invalid credentials");
-        }
-      })
-      .catch(() => {
-        setAuthError("Incorrect password");
-      });
+  // modal functions
+
+  const closeAllModals = () => {
+    setActiveModal("");
+    handleEditProfileClose();
   };
 
-  const handleRegister = ({ name, avatar, email, password }) => {
-    signUp(name, avatar, email, password)
-      .then((res) => {
-        handleLogin({ email, password });
-        console.log(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  const handleAddClick = () => {
+    setActiveModal("create");
   };
+
+  const handleEditProfileOpen = () => {
+    setIsEditProfileModalOpen(true);
+  };
+
+  const handleEditProfileClose = () => {
+    setIsEditProfileModalOpen(false);
+  };
+
+  const handleLogoutModalClose = () => {
+    setActiveModal("");
+  };
+
+  const handleLogoutModalLogout = () => {
+    setActiveModal("");
+    handleSignOut();
+  };
+
+  const handleLogoutModalOpen = () => {
+    setActiveModal("logout");
+    console.log("opening logout modal" + ` logout modal is ${activeModal}`);
+  };
+
   const onCardClick = (card) => {
     setActiveModal("preview");
     setSelectCard(card);
   };
 
-  const handleAddClick = () => {
-    setActiveModal("create");
+  const openDeleteModal = () => {
+    setDeleteModalOpen(true);
+    setActiveModal("");
+  };
+
+  // api functions
+
+  const fetchWeatherData = () => {
+    if (location.latitude && location.longitude) {
+      getForecastWeather(location, APIKey)
+        .then((data) => {
+          setWeatherData(filterDataFromWeatherApi(data));
+        })
+        .catch((err) => console.log(err));
+    }
   };
 
   const handleAddCardSubmit = (name, link, weather) => {
@@ -159,6 +152,20 @@ const App = () => {
       });
   };
 
+  const handleEditProfile = (name, avatar) => {
+    setIsLoading(true);
+    const token = localStorage.getItem("token");
+    Api.updateUserInfo(name, avatar, token)
+      .then((res) => {
+        closeAllModals();
+        setUser(res);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
+
   const handleLike = (card, isLiked) => {
     const { _id: id } = card;
     const token = localStorage.getItem("token");
@@ -180,39 +187,30 @@ const App = () => {
           .catch((err) => console.log(err));
   };
 
-  console.log(activeModal);
-  const handleLogoutModalOpen = () => {
-    setActiveModal("logout");
-    console.log("opening logout modal" + ` logout modal is ${activeModal}`);
+  const handleLogin = ({ email, password }) => {
+    signIn(email, password)
+      .then((res) => {
+        if (res && res.token) {
+          localStorage.setItem("token", res.token);
+          isReloading(res.token);
+        } else {
+          setAuthError(res.message || "Invalid credentials");
+        }
+      })
+      .catch(() => {
+        setAuthError("Incorrect password");
+      });
   };
 
-  const handleLogoutModalClose = () => {
-    setActiveModal("");
-  };
-
-  const handleLogoutModalLogout = () => {
-    setActiveModal("");
-    handleSignOut();
-  };
-
-  const openDeleteModal = () => {
-    setDeleteModalOpen(true);
-    setActiveModal("");
-  };
-
-  const closeAllModals = () => {
-    setActiveModal("");
-    handleEditProfileClose();
-  };
-
-  const fetchWeatherData = () => {
-    if (location.latitude && location.longitude) {
-      getForecastWeather(location, APIKey)
-        .then((data) => {
-          setWeatherData(filterDataFromWeatherApi(data));
-        })
-        .catch((err) => console.log(err));
-    }
+  const handleRegister = ({ name, avatar, email, password }) => {
+    signUp(name, avatar, email, password)
+      .then((res) => {
+        handleLogin({ email, password });
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const handleSetUserNull = useCallback(() => {
@@ -222,17 +220,25 @@ const App = () => {
     fetchWeatherData();
   }, []);
 
-  useEffect(() => {
-    if (token) {
-      Api.getCards(token)
-        .then(({ data }) => {
-          setCards(data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-  }, [token]);
+  const handleSignOut = () => {
+    localStorage.removeItem("token");
+    setUser(null);
+  };
+
+  const isReloading = (token) => {
+    checkToken(token)
+      .then((decoded) => {
+        setUser(decoded.data);
+        setIsLoginModalOpen(false);
+        setIsRegisterModalOpen(false);
+        setAuthError("");
+        setToken(token);
+      })
+      .catch((error) => {
+        console.error("Error checking token:", error);
+        setAuthError("Error checking token");
+      });
+  };
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -245,13 +251,12 @@ const App = () => {
         <div className="page">
           <div className="page__wrapper">
             <Header
-              weatherData={weatherData}
               handleAddClick={() => setActiveModal("create")}
               handleEditProfileOpen={handleEditProfileOpen}
               handleLogoutModalOpen={handleLogoutModalOpen}
               openLoginModal={() => setIsLoginModalOpen(true)}
               openRegisterModal={() => setIsRegisterModalOpen(true)}
-              setUser={setUser}
+              weatherData={weatherData}
             />
             {isLoading ? (
               <div>Loading...</div>
@@ -264,27 +269,27 @@ const App = () => {
                     component={Profile}
                     cards={cards}
                     handleAddClick={handleAddClick}
-                    onCardClick={onCardClick}
-                    onCardLike={handleLike}
-                    handleSetUserNull={handleSetUserNull}
                     handleEditProfileOpen={handleEditProfileOpen}
+                    handleSetUserNull={handleSetUserNull}
                     handleSignOut={handleSignOut}
                     handleLogoutModalOpen={handleLogoutModalOpen}
+                    onCardClick={onCardClick}
+                    onCardLike={handleLike}
                   />
                   <Route path="/">
                     <Main
-                      weatherData={weatherData}
                       cards={cards}
                       onCardClick={onCardClick}
                       onCardLike={handleLike}
+                      weatherData={weatherData}
                     />
                   </Route>
                 </Switch>
                 <Footer />
                 {activeModal === "create" && (
                   <AddItemModal
-                    onClose={closeAllModals}
                     isOpen={activeModal === "create"}
+                    onClose={closeAllModals}
                     onAddItem={handleAddCardSubmit}
                   />
                 )}
@@ -300,7 +305,6 @@ const App = () => {
                     onClose={() => setDeleteModalOpen(false)}
                     handleDelete={handleCardDeleteSubmit}
                     isLoading={isDeleting}
-                    onItemDeleted={closeAllModals}
                   />
                 )}
                 {isLoginModalOpen && (
@@ -308,7 +312,7 @@ const App = () => {
                     isOpen={isLoginModalOpen}
                     onClose={() => setIsLoginModalOpen(false)}
                     onLogin={handleLogin}
-                    authError={authError}
+                    // authError={authError}
                     switchToRegister={() => {
                       setIsRegisterModalOpen(true);
                       setIsLoginModalOpen(false);
@@ -320,7 +324,7 @@ const App = () => {
                     isOpen={isRegisterModalOpen}
                     onClose={() => setIsRegisterModalOpen(false)}
                     onRegister={handleRegister}
-                    authError={authError}
+                    // authError={authError}
                     switchToLogin={() => {
                       setIsLoginModalOpen(true);
                       setIsRegisterModalOpen(false);
@@ -329,8 +333,8 @@ const App = () => {
                 )}
                 {activeModal === "logout" && (
                   <LogoutModal
-                    handleSignOut={handleLogoutModalLogout}
                     handleLogoutModalClose={handleLogoutModalClose}
+                    handleSignOut={handleLogoutModalLogout}
                     isOpen={true}
                   />
                 )}

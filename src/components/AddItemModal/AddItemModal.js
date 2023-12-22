@@ -4,7 +4,6 @@ import {
   NewItemValidation,
   NewItemNameValidation,
   NewItemLinkValidation,
-  NewItemWeatherType,
 } from "../../utils/validation";
 
 const AddItemModal = ({ isOpen, onAddItem, onClose }) => {

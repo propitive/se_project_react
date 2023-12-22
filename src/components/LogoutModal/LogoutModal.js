@@ -1,14 +1,7 @@
 import { useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function LogoutModal({ handleLogoutModalClose, handleSignOut, isOpen }) {
-  const history = useHistory();
-
-  const handleLogout = () => {
-    handleSignOut();
-    history.push("/");
-  };
-
   const handleCloseOnOverlayClick = (event) => {
     if (event.target === event.currentTarget) {
       handleLogoutModalClose();
