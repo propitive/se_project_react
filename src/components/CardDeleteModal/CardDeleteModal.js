@@ -29,10 +29,6 @@ function CardDeleteModal({ onClose, handleDelete, isLoading }) {
           </p>
           <p className="modal__message-line">This action is irreversable.</p>
         </div>
-
-        {/* <p className="modal__yes" onClick={handleDelete}>
-          {isLoading ? "Saving..." : "Yes, delete item"}
-          </p> */}
         <button
           className="delete-modal__delete-buton"
           onClick={handleDelete}

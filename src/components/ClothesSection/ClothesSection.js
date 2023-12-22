@@ -16,9 +16,6 @@ const ClothesSection = ({
     <div className="clothes-section">
       <div className="clothes-section__nav">
         <div className="clothes-section__title">Your Items</div>
-        {/* <p className="clothes-section__add" onClick={handleAddClick}>
-          + Add New
-        </p> */}
       </div>
       <div className="clothes-section-container">
         {currentUser !== null &&

@@ -75,8 +75,6 @@ const Header = ({
             {isMainPage ? (
               <ToggleSwitch isChecked={isToggleOn} onToggle={handleToggle} />
             ) : undefined}
-            {/* <ToggleSwitch isChecked={isToggleOn} onToggle={handleToggle} /> */}
-
             {currentUser ? (
               <>
                 <button onClick={handleAddClick} className="navigation__button">
@@ -219,18 +217,9 @@ const Header = ({
                 </>
               ) : (
                 <>
-                  {/* <span className="navigation__link" onClick={openLoginModal}>
-                    Log in
-                  </span> */}
                   <li onClick={openLoginModal} className="nav-text">
                     <span> Log in</span>
                   </li>
-                  {/* <span
-                    className="navigation__link"
-                    onClick={openRegisterModal}
-                  >
-                    Sign up
-                  </span> */}
                   <li onClick={openRegisterModal} className="nav-text">
                     <span>Sign up</span>
                   </li>
@@ -244,16 +233,6 @@ const Header = ({
                   />
                 </div>
               ) : undefined}
-              {/* {SidebarData.map((item, index) => {
-                      return (
-                        <li key={index} className={item.cName}>
-                          <Link to={item.path}>
-                            <span>{item.title}</span>
-                          </Link>
-                        </li>
-                      );
-                    })} */}
-              {/* <BookOnlineButton className=" nav-menu__button" /> */}
             </ul>
           </nav>
         </div>

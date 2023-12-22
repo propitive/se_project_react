@@ -43,13 +43,6 @@ function ItemModal({ card, onClose, onOpenDeleteModal }) {
             <p className="item-modal__weather">Weather: {card.weather}</p>
             {isCardOwner && (
               <>
-                {/* <button
-                  className="item-modal__delete"
-                  onClick={onOpenDeleteModal}
-                  type="button"
-                >
-                  Delete item
-                </button> */}
                 <button
                   className="item-modal__delete-buton"
                   onClick={onOpenDeleteModal}

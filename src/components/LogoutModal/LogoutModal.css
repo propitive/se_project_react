@@ -43,7 +43,6 @@
   line-height: 20px;
   margin: 0 0 20px;
   color: #1a1b22;
-  /* font-family: "Roboto", Arial, sans-serif; */
   font-size: 24px;
   font-weight: 900;
 }
@@ -119,7 +118,6 @@
 @media screen and (max-width: 670px) {
   .modal-logout__container {
     width: 350px;
-    /* padding: 24px 26px 24px; */
   }
   .modal-logout__title {
     margin: 0 0 15px;

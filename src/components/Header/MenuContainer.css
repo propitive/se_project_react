@@ -36,7 +36,6 @@
 
 .nav-menu__profile-section:hover {
   background-color: rgba(21, 23, 23, 0.7);
-  /* color: rgb(181, 143, 94); */
 }
 
 .nav-menu__username {
@@ -54,7 +53,6 @@
 }
 
 .nav-menu {
-  /* background-color: #333333; */
   background-color: #222f3e;
   width: 250px;
   height: 100vh;
@@ -117,7 +115,6 @@
 
 .nav-text span:hover {
   background-color: rgba(21, 23, 23, 0.7);
-  /* color: rgb(181, 143, 94); */
 }
 
 .nav-menu-items {
@@ -125,12 +122,10 @@
   padding: 0;
   margin: 0;
   z-index: 5;
-  /* background-color: #333333; */
   background-color: #222f3e;
 }
 
 .navbar-toggle {
-  /* background-color: #333333; */
   background-color: #222f3e;
   padding-left: 40px;
   width: 100%;
