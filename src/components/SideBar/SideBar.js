@@ -1,13 +1,8 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
 import "./SideBar.css";
 import CurrentUserContext from "../../context/CurrentUserContext";
 function SideBar({ handleEditProfileOpen, handleLogoutModalOpen }) {
   const currentUser = useContext(CurrentUserContext);
-
-  // const handleLogout = () => {
-  //   handleOpenLogoutModal();
-  // };
 
   return (
     <div className="side-bar">

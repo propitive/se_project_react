@@ -188,20 +188,12 @@ const App = () => {
 
   const handleLogoutModalClose = () => {
     setActiveModal("");
-    // handleSignOut();
   };
 
   const handleLogoutModalLogout = () => {
     setActiveModal("");
     handleSignOut();
   };
-
-  // const handleLogoutModalOpen = useCallback(() => {
-  //   setIsLogoutModalOpen(true);
-  //   console.log(
-  //     "opening logout modal" + `logout modal is ${isLogoutModalOpen}`
-  //   );
-  // }, []);
 
   const openDeleteModal = () => {
     setDeleteModalOpen(true);
@@ -277,7 +269,6 @@ const App = () => {
                     handleSetUserNull={handleSetUserNull}
                     handleEditProfileOpen={handleEditProfileOpen}
                     handleSignOut={handleSignOut}
-                    // handleLogoutModalOpen={handleLogoutModalOpen}
                     handleLogoutModalOpen={handleLogoutModalOpen}
                   />
                   <Route path="/">

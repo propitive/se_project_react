@@ -47,12 +47,6 @@ const Header = ({
   const history = useHistory();
   const location = useLocation();
 
-  // const handleSignOut = () => {
-  //   localStorage.removeItem("token");
-  //   setUser(null);
-  //   history.push("/");
-  // };
-
   const isMainPage = location.pathname === "/";
   const isProfilePage = location.pathname === "/profile";
 
@@ -194,12 +188,6 @@ const Header = ({
                     <span>+ Add Clothes</span>
                   </li>
                   {!isMainPage && !isProfilePage && (
-                    // <button
-                    //   onClick={handleLogoutModalOpen}
-                    //   className="navigation__button"
-                    // >
-                    //   Sign out
-                    // </button>
                     <li onClick={handleLogoutModalOpen} className="nav-text">
                       <span>Sign out</span>
                     </li>
