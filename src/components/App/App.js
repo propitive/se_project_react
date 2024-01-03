@@ -27,7 +27,7 @@ const APIKey = "44d763e20353ebef92d497833d045a80";
 
 const App = () => {
   const [weatherData, setWeatherData] = useState({});
-  const [activeModal, setActiveModal] = useState("logout");
+  const [activeModal, setActiveModal] = useState("");
   const [selectCard, setSelectCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [cards, setCards] = useState([]);
