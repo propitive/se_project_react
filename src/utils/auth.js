@@ -8,7 +8,10 @@ const handleResponse = (res) => {
   if (!res.ok) {
     return res.json().then((error) => Promise.reject(error));
   }
+  // look into this later on
+
   return res.json();
+  // return console.log(res);
 };
 
 export function signUp(name, avatar, email, password) {
