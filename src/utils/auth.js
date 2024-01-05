@@ -1,17 +1,14 @@
 const BASE_URL =
   process.env.NODE_ENV === "production"
     ? // ? "https://api.sweaterweather.umhl.com"
-      "sweaterweather-api.onrender.com"
+      "https://sweaterweather-api.onrender.com"
     : "http://localhost:3001";
 
 const handleResponse = (res) => {
   if (!res.ok) {
     return res.json().then((error) => Promise.reject(error));
   }
-  // look into this later on
-
   return res.json();
-  // return console.log(res);
 };
 
 export function signUp(name, avatar, email, password) {
