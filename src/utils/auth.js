@@ -1,7 +1,6 @@
 const BASE_URL =
   process.env.NODE_ENV === "production"
-    ? // ? "https://api.sweaterweather.umhl.com"
-      "https://sweaterweather-api.onrender.com"
+    ? "https://api.sweaterweather.umhl.com"
     : "http://localhost:3001";
 
 const handleResponse = (res) => {
