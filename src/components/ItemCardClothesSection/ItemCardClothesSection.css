@@ -21,7 +21,6 @@
     transition: all 0.2s ease-out;
     box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
     top: -4px;
-    border-radius: 10px;
   }
 }
 
@@ -69,7 +68,7 @@
 
 @media screen and (max-width: 1390px) {
   .card-cs {
-    background-color: rgb(192, 233, 255);
+    /* background-color: rgb(192, 233, 255); */
     width: 300px;
     height: 300px;
   }
@@ -93,7 +92,7 @@
 
 @media screen and (max-width: 1307px) {
   .card-cs {
-    background-color: rgb(192, 255, 194);
+    /* background-color: rgb(192, 255, 194); */
     width: 270px;
     height: 270px;
   }
@@ -108,7 +107,7 @@
 
 @media screen and (max-width: 1220px) {
   .card-cs {
-    background-color: rgb(252, 255, 192);
+    /* background-color: rgb(252, 255, 192); */
     width: 250px;
     height: 250px;
   }
@@ -120,7 +119,7 @@
 
 @media screen and (max-width: 1157px) {
   .card-cs {
-    background-color: rgb(255, 200, 192);
+    /* background-color: rgb(255, 200, 192); */
     width: 220px;
     height: 220px;
   }
@@ -135,7 +134,7 @@
 
 @media screen and (max-width: 1067px) {
   .card-cs {
-    background-color: rgb(252, 255, 192);
+    /* background-color: rgb(252, 255, 192); */
     width: 195px;
     height: 195px;
   }
@@ -150,7 +149,7 @@
 
 @media screen and (max-width: 1000px) {
   .card-cs {
-    background-color: pink;
+    /* background-color: pink; */
     width: 260px;
     height: 260px;
   }
@@ -165,7 +164,7 @@
 
 @media screen and (max-width: 915px) {
   .card-cs {
-    background-color: purple;
+    /* background-color: purple; */
     width: 220px;
     height: 220px;
   }
@@ -177,7 +176,7 @@
 
 @media screen and (max-width: 795px) {
   .card-cs {
-    background-color: orange;
+    /* background-color: orange; */
     width: 191px;
     height: 191px;
   }
@@ -189,7 +188,7 @@
 
 @media screen and (max-width: 711px) {
   .card-cs {
-    background-color: red;
+    /* background-color: red; */
     width: 170px;
     height: 170px;
   }
@@ -216,7 +215,7 @@
 
 @media screen and (max-width: 588px) {
   .card-cs {
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     width: 150px;
     height: 150px;
   }
